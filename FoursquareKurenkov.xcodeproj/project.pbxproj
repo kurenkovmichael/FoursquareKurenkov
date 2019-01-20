@@ -7,12 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CA466170A26D3BF9C584C8F /* Pods_FoursquareKurenkov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61AE2A5ACFB3E1A2BCA6DA /* Pods_FoursquareKurenkov.framework */; };
 		CF7CB4A121F35B73008E9EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4A021F35B73008E9EE6 /* AppDelegate.swift */; };
 		CF7CB4A321F35B73008E9EE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4A221F35B73008E9EE6 /* ViewController.swift */; };
 		CF7CB4A621F35B73008E9EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4A421F35B73008E9EE6 /* Main.storyboard */; };
 		CF7CB4A821F35B7A008E9EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4A721F35B7A008E9EE6 /* Assets.xcassets */; };
 		CF7CB4AB21F35B7A008E9EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4A921F35B7A008E9EE6 /* LaunchScreen.storyboard */; };
 		CF7CB4B621F35B7A008E9EE6 /* FoursquareKurenkovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4B521F35B7A008E9EE6 /* FoursquareKurenkovTests.swift */; };
+		CF7CB4CE21F35C32008E9EE6 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4C521F35C31008E9EE6 /* LaunchInteractor.swift */; };
+		CF7CB4CF21F35C32008E9EE6 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4C621F35C31008E9EE6 /* LaunchRouter.swift */; };
+		CF7CB4D021F35C32008E9EE6 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4CB21F35C31008E9EE6 /* AuthorizationService.swift */; };
+		CF7CB4D121F35C32008E9EE6 /* UserDefaultsAuthorizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4CC21F35C31008E9EE6 /* UserDefaultsAuthorizationStorage.swift */; };
+		CF7CB4D821F36870008E9EE6 /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4D721F36870008E9EE6 /* WeakBox.swift */; };
+		CF7CB4DD21F491C2008E9EE6 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */; };
+		CF7CB4DE21F491C2008E9EE6 /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4DC21F491C2008E9EE6 /* AuthorizationViewController.xib */; };
+		CF7CB4E221F49ED7008E9EE6 /* LaunchViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4E121F49ED7008E9EE6 /* LaunchViewControllersFactory.swift */; };
+		CF7CB4E421F4A6E8008E9EE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4E321F4A6E8008E9EE6 /* Localizable.strings */; };
+		CF7CB4E621F4AB54008E9EE6 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4E521F4AB53008E9EE6 /* AuthorizationPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E61AE2A5ACFB3E1A2BCA6DA /* Pods_FoursquareKurenkov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareKurenkov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		686BE2962F2978FD38C6FE18 /* Pods-FoursquareKurenkov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareKurenkov.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov.release.xcconfig"; sourceTree = "<group>"; };
+		7628C2FCD150E38A410BC712 /* Pods-FoursquareKurenkov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareKurenkov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov.debug.xcconfig"; sourceTree = "<group>"; };
 		CF7CB49D21F35B73008E9EE6 /* FoursquareKurenkov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareKurenkov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7CB4A021F35B73008E9EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7CB4A221F35B73008E9EE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +50,17 @@
 		CF7CB4B121F35B7A008E9EE6 /* FoursquareKurenkovTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoursquareKurenkovTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7CB4B521F35B7A008E9EE6 /* FoursquareKurenkovTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareKurenkovTests.swift; sourceTree = "<group>"; };
 		CF7CB4B721F35B7A008E9EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF7CB4C521F35C31008E9EE6 /* LaunchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
+		CF7CB4C621F35C31008E9EE6 /* LaunchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
+		CF7CB4CB21F35C31008E9EE6 /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		CF7CB4CC21F35C31008E9EE6 /* UserDefaultsAuthorizationStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsAuthorizationStorage.swift; sourceTree = "<group>"; };
+		CF7CB4D221F35CB3008E9EE6 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF7CB4D721F36870008E9EE6 /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
+		CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		CF7CB4DC21F491C2008E9EE6 /* AuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationViewController.xib; sourceTree = "<group>"; };
+		CF7CB4E121F49ED7008E9EE6 /* LaunchViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewControllersFactory.swift; sourceTree = "<group>"; };
+		CF7CB4E321F4A6E8008E9EE6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CF7CB4E521F4AB53008E9EE6 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA466170A26D3BF9C584C8F /* Pods_FoursquareKurenkov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7132888B6A2D2C71BFB37D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7628C2FCD150E38A410BC712 /* Pods-FoursquareKurenkov.debug.xcconfig */,
+				686BE2962F2978FD38C6FE18 /* Pods-FoursquareKurenkov.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF7CB49421F35B72008E9EE6 = {
 			isa = PBXGroup;
 			children = (
 				CF7CB49F21F35B73008E9EE6 /* FoursquareKurenkov */,
 				CF7CB4B421F35B7A008E9EE6 /* FoursquareKurenkovTests */,
 				CF7CB49E21F35B73008E9EE6 /* Products */,
+				C7132888B6A2D2C71BFB37D2 /* Pods */,
+				DACECF50894139D2B753AC71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +114,12 @@
 		CF7CB49F21F35B73008E9EE6 /* FoursquareKurenkov */ = {
 			isa = PBXGroup;
 			children = (
+				CF7CB4C221F35C31008E9EE6 /* Application */,
+				CF7CB4C121F35C04008E9EE6 /* Resources */,
+				CF7CB4C021F35BF9008E9EE6 /* SupportingFiles */,
 				CF7CB4A021F35B73008E9EE6 /* AppDelegate.swift */,
 				CF7CB4A221F35B73008E9EE6 /* ViewController.swift */,
 				CF7CB4A421F35B73008E9EE6 /* Main.storyboard */,
-				CF7CB4A721F35B7A008E9EE6 /* Assets.xcassets */,
-				CF7CB4A921F35B7A008E9EE6 /* LaunchScreen.storyboard */,
-				CF7CB4AC21F35B7A008E9EE6 /* Info.plist */,
 			);
 			path = FoursquareKurenkov;
 			sourceTree = "<group>";
@@ -96,6 +133,113 @@
 			path = FoursquareKurenkovTests;
 			sourceTree = "<group>";
 		};
+		CF7CB4C021F35BF9008E9EE6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4D221F35CB3008E9EE6 /* Swift-Bridging-Header.h */,
+				CF7CB4AC21F35B7A008E9EE6 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF7CB4C121F35C04008E9EE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4A921F35B7A008E9EE6 /* LaunchScreen.storyboard */,
+				CF7CB4A721F35B7A008E9EE6 /* Assets.xcassets */,
+				CF7CB4E321F4A6E8008E9EE6 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CF7CB4C221F35C31008E9EE6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4D621F3685D008E9EE6 /* Common */,
+				CF7CB4C321F35C31008E9EE6 /* Favorites */,
+				CF7CB4C421F35C31008E9EE6 /* Launching */,
+				CF7CB4C721F35C31008E9EE6 /* TabBar */,
+				CF7CB4C821F35C31008E9EE6 /* Map */,
+				CF7CB4C921F35C31008E9EE6 /* Profile */,
+				CF7CB4CA21F35C31008E9EE6 /* Authorization */,
+				CF7CB4CD21F35C31008E9EE6 /* VenueDetails */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CF7CB4C321F35C31008E9EE6 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		CF7CB4C421F35C31008E9EE6 /* Launching */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4E121F49ED7008E9EE6 /* LaunchViewControllersFactory.swift */,
+				CF7CB4C621F35C31008E9EE6 /* LaunchRouter.swift */,
+				CF7CB4C521F35C31008E9EE6 /* LaunchInteractor.swift */,
+			);
+			path = Launching;
+			sourceTree = "<group>";
+		};
+		CF7CB4C721F35C31008E9EE6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CF7CB4C821F35C31008E9EE6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		CF7CB4C921F35C31008E9EE6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CF7CB4CA21F35C31008E9EE6 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */,
+				CF7CB4DC21F491C2008E9EE6 /* AuthorizationViewController.xib */,
+				CF7CB4E521F4AB53008E9EE6 /* AuthorizationPresenter.swift */,
+				CF7CB4CB21F35C31008E9EE6 /* AuthorizationService.swift */,
+				CF7CB4CC21F35C31008E9EE6 /* UserDefaultsAuthorizationStorage.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		CF7CB4CD21F35C31008E9EE6 /* VenueDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VenueDetails;
+			sourceTree = "<group>";
+		};
+		CF7CB4D621F3685D008E9EE6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4D721F36870008E9EE6 /* WeakBox.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DACECF50894139D2B753AC71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E61AE2A5ACFB3E1A2BCA6DA /* Pods_FoursquareKurenkov.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF7CB4BA21F35B7A008E9EE6 /* Build configuration list for PBXNativeTarget "FoursquareKurenkov" */;
 			buildPhases = (
+				1C2C4E4CC682A57CC375DBBE /* [CP] Check Pods Manifest.lock */,
+				CF7CB4D421F35D52008E9EE6 /* SwiftLint */,
 				CF7CB49921F35B73008E9EE6 /* Sources */,
 				CF7CB49A21F35B73008E9EE6 /* Frameworks */,
 				CF7CB49B21F35B73008E9EE6 /* Resources */,
+				5D8E555C88179789D415EF24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +324,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7CB4E421F4A6E8008E9EE6 /* Localizable.strings in Resources */,
+				CF7CB4DE21F491C2008E9EE6 /* AuthorizationViewController.xib in Resources */,
 				CF7CB4AB21F35B7A008E9EE6 /* LaunchScreen.storyboard in Resources */,
 				CF7CB4A821F35B7A008E9EE6 /* Assets.xcassets in Resources */,
 				CF7CB4A621F35B73008E9EE6 /* Main.storyboard in Resources */,
@@ -192,13 +341,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C2C4E4CC682A57CC375DBBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoursquareKurenkov-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D8E555C88179789D415EF24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSOAuth/FSOAuth.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSOAuth.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF7CB4D421F35D52008E9EE6 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF7CB49921F35B73008E9EE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7CB4E221F49ED7008E9EE6 /* LaunchViewControllersFactory.swift in Sources */,
+				CF7CB4CE21F35C32008E9EE6 /* LaunchInteractor.swift in Sources */,
+				CF7CB4E621F4AB54008E9EE6 /* AuthorizationPresenter.swift in Sources */,
+				CF7CB4D021F35C32008E9EE6 /* AuthorizationService.swift in Sources */,
+				CF7CB4CF21F35C32008E9EE6 /* LaunchRouter.swift in Sources */,
 				CF7CB4A321F35B73008E9EE6 /* ViewController.swift in Sources */,
+				CF7CB4DD21F491C2008E9EE6 /* AuthorizationViewController.swift in Sources */,
 				CF7CB4A121F35B73008E9EE6 /* AppDelegate.swift in Sources */,
+				CF7CB4D121F35C32008E9EE6 /* UserDefaultsAuthorizationStorage.swift in Sources */,
+				CF7CB4D821F36870008E9EE6 /* WeakBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,37 +572,41 @@
 		};
 		CF7CB4BB21F35B7A008E9EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7628C2FCD150E38A410BC712 /* Pods-FoursquareKurenkov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3GKMDNHRZ;
-				INFOPLIST_FILE = FoursquareKurenkov/Info.plist;
+				INFOPLIST_FILE = FoursquareKurenkov/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.mikhailkurenkov.FoursquareKurenkov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoursquareKurenkov/SupportingFiles/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CF7CB4BC21F35B7A008E9EE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686BE2962F2978FD38C6FE18 /* Pods-FoursquareKurenkov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3GKMDNHRZ;
-				INFOPLIST_FILE = FoursquareKurenkov/Info.plist;
+				INFOPLIST_FILE = FoursquareKurenkov/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.mikhailkurenkov.FoursquareKurenkov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoursquareKurenkov/SupportingFiles/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

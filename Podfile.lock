@@ -1,0 +1,20 @@
+PODS:
+  - FSOAuth (1.2.1)
+  - SwiftLint (0.27.0)
+
+DEPENDENCIES:
+  - FSOAuth (= 1.2.1)
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FSOAuth
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  FSOAuth: abf5dc97e90d1da4cb6e04305653998088a223b3
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+
+PODFILE CHECKSUM: 8b81c9503f67a1978720d8390450abddc33b894c
+
+COCOAPODS: 1.5.3

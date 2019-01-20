@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import FoursquareKurenkov
+//@testable import FoursquareKurenkov
 
 class FoursquareKurenkovTests: XCTestCase {
 
