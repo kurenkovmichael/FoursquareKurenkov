@@ -6,7 +6,7 @@ protocol AuthorizationViewInput: class {
 }
 
 protocol AuthorizationViewOutput: class {
-    func loginButtonTapped()
+    func didTriggeredLoginTappedEvent()
 }
 
 class AuthorizationViewController: UIViewController, AuthorizationViewInput {
@@ -25,7 +25,7 @@ class AuthorizationViewController: UIViewController, AuthorizationViewInput {
         loginButton.setTitle(NSLocalizedString("login.button", comment: ""), for: .normal)
     }
 
-    // MARK: AuthorizationViewInput
+    // MARK: - AuthorizationViewInput
 
     func showActivityIndicator() {
         loginButton.isEnabled = false
@@ -39,10 +39,10 @@ class AuthorizationViewController: UIViewController, AuthorizationViewInput {
         loginButton.isEnabled = true
     }
 
-    // MARK: Actions
+    // MARK: - Actions
 
     @IBAction func loginButtonPressed(_ sender: Any) {
-        output.loginButtonTapped()
+        output.didTriggeredLoginTappedEvent()
     }
 
 }

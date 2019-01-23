@@ -11,13 +11,13 @@ class AuthorizationPresenter: AuthorizationViewOutput, AuthorizationServiceObser
         self.authorizationService.add(observer: self)
     }
 
-    // MARK: AuthorizationViewOutput
+    // MARK: - AuthorizationViewOutput
 
-    func loginButtonTapped() {
+    func didTriggeredLoginTappedEvent() {
         authorizationService.authorize()
     }
 
-    // MARK: AuthorizationServiceObserver
+    // MARK: - AuthorizationServiceObserver
 
     func updateAuthorization(_ state: AuthorizationService.State) {
         switch authorizationService.state {

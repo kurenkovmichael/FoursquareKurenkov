@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (4.7.3)
   - FSOAuth (1.2.1)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
+  - Alamofire (= 4.7.3)
   - FSOAuth (= 1.2.1)
-  - SwiftLint
+  - SwiftLint (= 0.27.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - FSOAuth
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   FSOAuth: abf5dc97e90d1da4cb6e04305653998088a223b3
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 8b81c9503f67a1978720d8390450abddc33b894c
+PODFILE CHECKSUM: f47d1e37fbb287afbf2d225bb756902803d76961
 
 COCOAPODS: 1.5.3

@@ -70,7 +70,7 @@ class AuthorizationService {
         }
     }
 
-    // MARK: Authorization
+    // MARK: - Authorization
 
     private func authorizeUser() {
         let statuscode = FSOAuth.authorizeUser(usingClientId: clientId,
@@ -124,7 +124,7 @@ class AuthorizationService {
         }
     }
 
-    // MARK: State
+    // MARK: - State
 
     private func compleateAuthorizationSuccessfully(withAuthToken authToken: String) {
         storage.storeAauthToken(authToken)
@@ -141,7 +141,7 @@ class AuthorizationService {
         notifyUpdateAuthorization()
     }
 
-    // MARK: Observers
+    // MARK: - Observers
 
     private var observers: [WeakBox<AuthorizationServiceObserver>] = []
 

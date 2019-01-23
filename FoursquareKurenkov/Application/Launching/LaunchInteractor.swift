@@ -26,7 +26,7 @@ class LaunchInteractor: AuthorizationServiceObserver {
         }
     }
 
-    // MARK: AuthorizationServiceObserver
+    // MARK: - AuthorizationServiceObserver
 
     func updateAuthorization(_ state: AuthorizationService.State) {
         showScreen(forAuthorizationState: state)

@@ -33,10 +33,9 @@ class LaunchRouter {
             return
         }
 
-        if let viewController = viewControllersFactory.applicationMainViewController() {
-            show(viewController: viewController)
-            state = .shownApplication
-        }
+        let viewController = viewControllersFactory.applicationMainViewController()
+        show(viewController: viewController)
+        state = .shownApplication
     }
 
     private func show(viewController: UIViewController) {

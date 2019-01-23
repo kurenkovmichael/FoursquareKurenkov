@@ -11,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private var authorizationService: AuthorizationService!
     private var launchInteractor: LaunchInteractor!
+    private var api: FoursquareApi!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -20,7 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                     callbackURL: FoursquareConfig.callbackURL,
                                                     storage: UserDefaultsAuthorizationStorage())
 
-        let launchViewControllersFactory = LaunchViewControllersFactory(authorizationService)
+        let authorizationErrorHandler = AuthorizationErrorHandler(authorizationService: authorizationService)
+        api = FoursquareApi(authTokenProvider: authorizationService,
+                            errorHandlers: [authorizationErrorHandler])
+
+        let imagesServise = ImagesServise(syncCache: MemoryImagesCache(),
+                                          asyncCache: DiskImagesCache(name: "ImagesCache"))
+
+        let launchViewControllersFactory
+            = LaunchViewControllersFactory(authorizationService: authorizationService,
+                                           api: api,
+                                           imagesServise: imagesServise)
         let launchRouter = LaunchRouter(viewControllersFactory: launchViewControllersFactory)
         launchInteractor = LaunchInteractor(launchRouter: launchRouter,
                                             authorizationService: authorizationService)
