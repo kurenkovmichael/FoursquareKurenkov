@@ -26,6 +26,8 @@ class ProfileAvatarCell: UITableViewCell, ImageViewInput {
         self.avatarImageView?.image = nil
     }
 
-    func showActivityIndicator() { }
+    func showActivityIndicator() {
+        // TODO: Need implement
+    }
 
 }

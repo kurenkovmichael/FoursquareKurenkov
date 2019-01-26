@@ -2,4 +2,9 @@
 "login.title" = "Foursquare";
 "login.button" = "Login or Sign Up";
 
+"map.tabTitle" = "Map";
+"map.emptyPlaceholder" = "It was not possible to find venues near you";
+
+"favorites.tabTitle" = "Favorites";
+
 "profile.tabTitle" = "Profile";

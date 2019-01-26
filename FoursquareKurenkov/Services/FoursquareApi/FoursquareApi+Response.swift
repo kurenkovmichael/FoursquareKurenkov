@@ -17,4 +17,8 @@ extension FoursquareApi {
         let user: Profile?
     }
 
+    struct ResponseVenues: Codable {
+        let venues: [Venue]?
+    }
+
 }

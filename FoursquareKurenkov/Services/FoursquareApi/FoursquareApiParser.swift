@@ -11,7 +11,6 @@ class FoursquareApiParser<ResponseType: Codable, ResultType> {
     }
 
     func parse(response: DefaultDataResponse) -> ApiResult<ResultType> {
-
         if let error = error(fromNetworkError: response.error) {
             return .fail(error: error)
         }

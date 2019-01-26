@@ -34,15 +34,18 @@ class FoursquareApi {
     }
 
     func request<Response, Result>(path: String,
+                                   parameters: [String: Any] = [:],
                                    completion: @escaping (ApiResult<Result>) -> Void,
                                    resultConverter: @escaping FoursquareApiParser<Response, Result>.ResultConverter)
         where Response: Codable {
         request(path: path,
+                parameters: parameters,
                 parser: FoursquareApiParser<Response, Result>(resultConverter: resultConverter),
                 completion: completion)
     }
 
     func request<Response, Result>(path: String,
+                                   parameters additionalParameters: [String: Any],
                                    parser: FoursquareApiParser<Response, Result>,
                                    completion: @escaping (ApiResult<Result>) -> Void)
         where Response: Codable {
@@ -65,9 +68,14 @@ class FoursquareApi {
                 completion(result)
             }
 
+            var parameters = defaultParameters()
+            for (key, value) in additionalParameters {
+                parameters[key] = value
+            }
+
             Alamofire.request(url,
                               method: .get,
-                              parameters: defaultParameters(),
+                              parameters: parameters,
                               encoding: URLEncoding.default,
                               headers: nil)
                 .response(completionHandler: requestCompletion)
@@ -81,7 +89,7 @@ class FoursquareApi {
         return url
     }
 
-    private func defaultParameters() -> Parameters? {
+    private func defaultParameters() -> [String: Any] {
         var parameters = Parameters()
         if let authToken = authTokenProvider.authToken {
             parameters["oauth_token"] = authToken

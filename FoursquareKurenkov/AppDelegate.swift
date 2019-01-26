@@ -10,29 +10,17 @@ struct FoursquareConfig {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private var authorizationService: AuthorizationService!
-    private var launchInteractor: LaunchInteractor!
     private var api: FoursquareApi!
+    private var locationService: LocationService!
+    private var imagesServise: ImagesServise!
+    private var launchInteractor: LaunchInteractor!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        createServices()
 
-        authorizationService = AuthorizationService(clientId: FoursquareConfig.clientId,
-                                                    clientSecret: FoursquareConfig.clientSecret,
-                                                    callbackURL: FoursquareConfig.callbackURL,
-                                                    storage: UserDefaultsAuthorizationStorage())
-
-        let authorizationErrorHandler = AuthorizationErrorHandler(authorizationService: authorizationService)
-        api = FoursquareApi(authTokenProvider: authorizationService,
-                            errorHandlers: [authorizationErrorHandler])
-
-        let imagesServise = ImagesServise(syncCache: MemoryImagesCache(),
-                                          asyncCache: DiskImagesCache(name: "ImagesCache"))
-
-        let launchViewControllersFactory
-            = LaunchViewControllersFactory(authorizationService: authorizationService,
-                                           api: api,
-                                           imagesServise: imagesServise)
-        let launchRouter = LaunchRouter(viewControllersFactory: launchViewControllersFactory)
+        let launchRouter = LaunchRouter(rootFactory: rootViewControllerFactory(),
+                                        loginFactory: loginViewControllerFactory())
         launchInteractor = LaunchInteractor(launchRouter: launchRouter,
                                             authorizationService: authorizationService)
 
@@ -58,4 +46,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return didHandle
     }
 
+    private func createServices() {
+        authorizationService = AuthorizationService(clientId: FoursquareConfig.clientId,
+                                                    clientSecret: FoursquareConfig.clientSecret,
+                                                    callbackURL: FoursquareConfig.callbackURL,
+                                                    storage: UserDefaultsAuthorizationStorage())
+
+        let authorizationErrorHandler = AuthorizationErrorHandler(authorizationService: authorizationService)
+        api = FoursquareApi(authTokenProvider: authorizationService,
+                                errorHandlers: [authorizationErrorHandler])
+
+        locationService = LocationService()
+
+        imagesServise = ImagesServise(syncCache: MemoryImagesCache(),
+                                      asyncCache: DiskImagesCache(name: "ImagesCache"))
+    }
+
+    private func loginViewControllerFactory() -> ViewControllerFactory {
+        return AuthorizationViewControllerFactory(authorizationService: authorizationService)
+    }
+
+    private func rootViewControllerFactory() -> ViewControllerFactory {
+        let mapFactory = MapViewControllerFactory(api: api, locationService: locationService)
+
+        let profileFactory = ProfileViewControllerFactory(authorizationService: authorizationService,
+                                                          api: api,
+                                                          imagesServise: imagesServise)
+
+        return TabBarViewControllerFactory(mapFactory: mapFactory,
+                                           favoritesFactory: profileFactory,
+                                           profileFactory: profileFactory)
+    }
 }

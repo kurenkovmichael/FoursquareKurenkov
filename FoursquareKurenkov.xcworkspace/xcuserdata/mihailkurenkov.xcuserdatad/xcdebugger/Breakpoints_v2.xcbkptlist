@@ -38,32 +38,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoursquareKurenkov/Services/Images/DiskImagesCache.swift"
-            timestampString = "569957768.2802041"
+            filePath = "FoursquareKurenkov/Services/FoursquareApi/FoursquareApi.swift"
+            timestampString = "570136008.557111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "seve(image:for:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "request(path:parameters:parser:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoursquareKurenkov/Application/Profile/ProfilePresenter.swift"
-            timestampString = "569957768.282403"
+            filePath = "FoursquareKurenkov/Services/FoursquareApi/FoursquareApi+SearchVenues.swift"
+            timestampString = "570194039.445478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "profileLoadingCompletedSuccessfully(_:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "searchVenues(latitude:longitude:radius:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoursquareKurenkov/Services/FoursquareApi/FoursquareApi+SearchVenues.swift"
+            timestampString = "570194039.445581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "searchVenues(latitude:longitude:radius:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

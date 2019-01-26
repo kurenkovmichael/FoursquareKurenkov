@@ -17,6 +17,12 @@
 		CF3C4F0C21F63E8400257AA7 /* ProfileBioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF3C4F0A21F63E8400257AA7 /* ProfileBioCell.xib */; };
 		CF3C4F0F21F6407B00257AA7 /* ProfileLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C4F0D21F6407B00257AA7 /* ProfileLogoutCell.swift */; };
 		CF3C4F1021F6407B00257AA7 /* ProfileLogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF3C4F0E21F6407B00257AA7 /* ProfileLogoutCell.xib */; };
+		CF40F93C21FC847500180F36 /* ViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F93B21FC847500180F36 /* ViewContainer.swift */; };
+		CF40F93E21FC87AC00180F36 /* VenueDescriptionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F93D21FC87AC00180F36 /* VenueDescriptionFactory.swift */; };
+		CF40F94021FC88A300180F36 /* MapViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F93F21FC88A300180F36 /* MapViewControllerFactory.swift */; };
+		CF40F94221FC894C00180F36 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94121FC894C00180F36 /* ViewControllerFactory.swift */; };
+		CF40F94421FC8B7000180F36 /* ProfileViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94321FC8B7000180F36 /* ProfileViewControllerFactory.swift */; };
+		CF40F94621FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94521FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift */; };
 		CF7CB4A121F35B73008E9EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4A021F35B73008E9EE6 /* AppDelegate.swift */; };
 		CF7CB4AB21F35B7A008E9EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4A921F35B7A008E9EE6 /* LaunchScreen.storyboard */; };
 		CF7CB4B621F35B7A008E9EE6 /* FoursquareKurenkovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4B521F35B7A008E9EE6 /* FoursquareKurenkovTests.swift */; };
@@ -27,7 +33,7 @@
 		CF7CB4D821F36870008E9EE6 /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4D721F36870008E9EE6 /* WeakBox.swift */; };
 		CF7CB4DD21F491C2008E9EE6 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */; };
 		CF7CB4DE21F491C2008E9EE6 /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4DC21F491C2008E9EE6 /* AuthorizationViewController.xib */; };
-		CF7CB4E221F49ED7008E9EE6 /* LaunchViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4E121F49ED7008E9EE6 /* LaunchViewControllersFactory.swift */; };
+		CF7CB4E221F49ED7008E9EE6 /* TabBarViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4E121F49ED7008E9EE6 /* TabBarViewControllerFactory.swift */; };
 		CF7CB4E421F4A6E8008E9EE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4E321F4A6E8008E9EE6 /* Localizable.strings */; };
 		CF7CB4E621F4AB54008E9EE6 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4E521F4AB53008E9EE6 /* AuthorizationPresenter.swift */; };
 		CF7CB4F021F4B2D1008E9EE6 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4EF21F4B2D1008E9EE6 /* ProfilePresenter.swift */; };
@@ -42,7 +48,6 @@
 		CFAA719C21F642FF0089F40D /* ProfileAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA719A21F642FF0089F40D /* ProfileAvatarCell.swift */; };
 		CFAA719D21F642FF0089F40D /* ProfileAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFAA719B21F642FF0089F40D /* ProfileAvatarCell.xib */; };
 		CFAA71A021F65A320089F40D /* ImagesServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA719F21F65A320089F40D /* ImagesServise.swift */; };
-		CFAA71A221F6696C0089F40D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71A121F6696C0089F40D /* Profile.swift */; };
 		CFAA71A421F6EB520089F40D /* MemoryImagesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71A321F6EB520089F40D /* MemoryImagesCache.swift */; };
 		CFAA71A621F6EB810089F40D /* DiskImagesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71A521F6EB810089F40D /* DiskImagesCache.swift */; };
 		CFAA71AB21F79A3F0089F40D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71AA21F79A3F0089F40D /* ImageView.swift */; };
@@ -51,6 +56,22 @@
 		CFD4AD6321F7AE40006238EE /* ImageIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */; };
 		CFD4AD6521F8D300006238EE /* FoursquareImageIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6421F8D300006238EE /* FoursquareImageIdentifier.swift */; };
 		CFD4AD6721F8DD23006238EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD4AD6621F8DD23006238EE /* Assets.xcassets */; };
+		CFD4AD6A21F8DE2B006238EE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6921F8DE2B006238EE /* MapView.swift */; };
+		CFD4AD6C21F8DE4C006238EE /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6B21F8DE4C006238EE /* MapPresenter.swift */; };
+		CFD4AD6E21F8DE6E006238EE /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6D21F8DE6E006238EE /* MapInteractor.swift */; };
+		CFD4AD7121F8DF4D006238EE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6F21F8DF4D006238EE /* MapViewController.swift */; };
+		CFD4AD7221F8DF4D006238EE /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD4AD7021F8DF4D006238EE /* MapViewController.xib */; };
+		CFD4AD7421F8E06B006238EE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD4AD7321F8E06B006238EE /* MapKit.framework */; };
+		CFD4AD7721F8E429006238EE /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD7621F8E429006238EE /* LocationService.swift */; };
+		CFD4AD7921FA3F48006238EE /* FoursquareApi+SearchVenues.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD7821FA3F48006238EE /* FoursquareApi+SearchVenues.swift */; };
+		CFF5817F21FB78BF0003BAC6 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5817E21FB78BF0003BAC6 /* MapRouter.swift */; };
+		CFF5818121FB7A470003BAC6 /* MemoryVenuesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5818021FB7A470003BAC6 /* MemoryVenuesStorage.swift */; };
+		CFF5818B21FC4A110003BAC6 /* UIViewController+Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5818A21FC4A110003BAC6 /* UIViewController+Child.swift */; };
+		CFF5819521FC601B0003BAC6 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5819421FC601B0003BAC6 /* PlaceholderView.swift */; };
+		CFF5819721FC60250003BAC6 /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF5819621FC60250003BAC6 /* PlaceholderView.xib */; };
+		CFF5819921FC67080003BAC6 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5819821FC67080003BAC6 /* UIView+Nib.swift */; };
+		CFF5819B21FC6A250003BAC6 /* VenueDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5819A21FC6A250003BAC6 /* VenueDescriptionView.swift */; };
+		CFF5819D21FC6A2F0003BAC6 /* VenueDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF5819C21FC6A2F0003BAC6 /* VenueDescriptionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +97,12 @@
 		CF3C4F0A21F63E8400257AA7 /* ProfileBioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileBioCell.xib; sourceTree = "<group>"; };
 		CF3C4F0D21F6407B00257AA7 /* ProfileLogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLogoutCell.swift; sourceTree = "<group>"; };
 		CF3C4F0E21F6407B00257AA7 /* ProfileLogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileLogoutCell.xib; sourceTree = "<group>"; };
+		CF40F93B21FC847500180F36 /* ViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContainer.swift; sourceTree = "<group>"; };
+		CF40F93D21FC87AC00180F36 /* VenueDescriptionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDescriptionFactory.swift; sourceTree = "<group>"; };
+		CF40F93F21FC88A300180F36 /* MapViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerFactory.swift; sourceTree = "<group>"; };
+		CF40F94121FC894C00180F36 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		CF40F94321FC8B7000180F36 /* ProfileViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerFactory.swift; sourceTree = "<group>"; };
+		CF40F94521FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerFactory.swift; sourceTree = "<group>"; };
 		CF7CB49D21F35B73008E9EE6 /* FoursquareKurenkov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareKurenkov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7CB4A021F35B73008E9EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7CB4AA21F35B7A008E9EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,7 +118,7 @@
 		CF7CB4D721F36870008E9EE6 /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
 		CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		CF7CB4DC21F491C2008E9EE6 /* AuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationViewController.xib; sourceTree = "<group>"; };
-		CF7CB4E121F49ED7008E9EE6 /* LaunchViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewControllersFactory.swift; sourceTree = "<group>"; };
+		CF7CB4E121F49ED7008E9EE6 /* TabBarViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerFactory.swift; sourceTree = "<group>"; };
 		CF7CB4E321F4A6E8008E9EE6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CF7CB4E521F4AB53008E9EE6 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		CF7CB4EF21F4B2D1008E9EE6 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -106,7 +133,6 @@
 		CFAA719A21F642FF0089F40D /* ProfileAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarCell.swift; sourceTree = "<group>"; };
 		CFAA719B21F642FF0089F40D /* ProfileAvatarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileAvatarCell.xib; sourceTree = "<group>"; };
 		CFAA719F21F65A320089F40D /* ImagesServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesServise.swift; sourceTree = "<group>"; };
-		CFAA71A121F6696C0089F40D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CFAA71A321F6EB520089F40D /* MemoryImagesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryImagesCache.swift; sourceTree = "<group>"; };
 		CFAA71A521F6EB810089F40D /* DiskImagesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskImagesCache.swift; sourceTree = "<group>"; };
 		CFAA71AA21F79A3F0089F40D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -115,6 +141,22 @@
 		CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIdentifier.swift; sourceTree = "<group>"; };
 		CFD4AD6421F8D300006238EE /* FoursquareImageIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareImageIdentifier.swift; sourceTree = "<group>"; };
 		CFD4AD6621F8DD23006238EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFD4AD6921F8DE2B006238EE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CFD4AD6B21F8DE4C006238EE /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		CFD4AD6D21F8DE6E006238EE /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		CFD4AD6F21F8DF4D006238EE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CFD4AD7021F8DF4D006238EE /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		CFD4AD7321F8E06B006238EE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CFD4AD7621F8E429006238EE /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		CFD4AD7821FA3F48006238EE /* FoursquareApi+SearchVenues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoursquareApi+SearchVenues.swift"; sourceTree = "<group>"; };
+		CFF5817E21FB78BF0003BAC6 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		CFF5818021FB7A470003BAC6 /* MemoryVenuesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryVenuesStorage.swift; sourceTree = "<group>"; };
+		CFF5818A21FC4A110003BAC6 /* UIViewController+Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Child.swift"; sourceTree = "<group>"; };
+		CFF5819421FC601B0003BAC6 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		CFF5819621FC60250003BAC6 /* PlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
+		CFF5819821FC67080003BAC6 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		CFF5819A21FC6A250003BAC6 /* VenueDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDescriptionView.swift; sourceTree = "<group>"; };
+		CFF5819C21FC6A2F0003BAC6 /* VenueDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueDescriptionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD4AD7421F8E06B006238EE /* MapKit.framework in Frameworks */,
 				9CA466170A26D3BF9C584C8F /* Pods_FoursquareKurenkov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +188,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CF3C4F0021F63E3000257AA7 /* View */ = {
+		CF3C4F0021F63E3000257AA7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				CF3C4EFA21F6333400257AA7 /* ProfileViewController.swift */,
@@ -159,7 +202,15 @@
 				CF3C4F0D21F6407B00257AA7 /* ProfileLogoutCell.swift */,
 				CF3C4F0E21F6407B00257AA7 /* ProfileLogoutCell.xib */,
 			);
-			path = View;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CF40F93A21FC845E00180F36 /* ViewContainer */ = {
+			isa = PBXGroup;
+			children = (
+				CF40F93B21FC847500180F36 /* ViewContainer.swift */,
+			);
+			path = ViewContainer;
 			sourceTree = "<group>";
 		};
 		CF7CB49421F35B72008E9EE6 = {
@@ -227,10 +278,12 @@
 			children = (
 				CF7CB4D621F3685D008E9EE6 /* Common */,
 				CF7CB4C421F35C31008E9EE6 /* Launching */,
-				CF7CB4C321F35C31008E9EE6 /* Favorites */,
 				CF7CB4C821F35C31008E9EE6 /* Map */,
+				CF7CB4C321F35C31008E9EE6 /* Favorites */,
 				CF7CB4C921F35C31008E9EE6 /* Profile */,
 				CF7CB4CA21F35C31008E9EE6 /* Authorization */,
+				CFF5818521FC34100003BAC6 /* Placeholder */,
+				CFF5819121FC5C6D0003BAC6 /* VenueDescription */,
 				CF7CB4CD21F35C31008E9EE6 /* VenueDetails */,
 			);
 			path = Application;
@@ -246,7 +299,7 @@
 		CF7CB4C421F35C31008E9EE6 /* Launching */ = {
 			isa = PBXGroup;
 			children = (
-				CF7CB4E121F49ED7008E9EE6 /* LaunchViewControllersFactory.swift */,
+				CF7CB4E121F49ED7008E9EE6 /* TabBarViewControllerFactory.swift */,
 				CF7CB4C621F35C31008E9EE6 /* LaunchRouter.swift */,
 				CF7CB4C521F35C31008E9EE6 /* LaunchInteractor.swift */,
 			);
@@ -256,6 +309,13 @@
 		CF7CB4C821F35C31008E9EE6 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				CF40F93F21FC88A300180F36 /* MapViewControllerFactory.swift */,
+				CFF5817E21FB78BF0003BAC6 /* MapRouter.swift */,
+				CFD4AD6821F8DE19006238EE /* ViewController */,
+				CFD4AD6921F8DE2B006238EE /* MapView.swift */,
+				CFD4AD6B21F8DE4C006238EE /* MapPresenter.swift */,
+				CFD4AD6D21F8DE6E006238EE /* MapInteractor.swift */,
+				CFF5818021FB7A470003BAC6 /* MemoryVenuesStorage.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -263,12 +323,12 @@
 		CF7CB4C921F35C31008E9EE6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CF3C4F0021F63E3000257AA7 /* View */,
+				CF40F94321FC8B7000180F36 /* ProfileViewControllerFactory.swift */,
+				CF3C4F0021F63E3000257AA7 /* ViewController */,
 				CF3C4EFE21F63E0900257AA7 /* ProfileView.swift */,
 				CF7CB4EF21F4B2D1008E9EE6 /* ProfilePresenter.swift */,
 				CF7CB4F121F4B304008E9EE6 /* ProfileInteractor.swift */,
 				CF7CB4FE21F4F43B008E9EE6 /* MemoryProfileStorage.swift */,
-				CFAA71A121F6696C0089F40D /* Profile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -276,6 +336,7 @@
 		CF7CB4CA21F35C31008E9EE6 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				CF40F94521FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift */,
 				CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */,
 				CF7CB4DC21F491C2008E9EE6 /* AuthorizationViewController.xib */,
 				CF7CB4E521F4AB53008E9EE6 /* AuthorizationPresenter.swift */,
@@ -293,9 +354,13 @@
 		CF7CB4D621F3685D008E9EE6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CF40F93A21FC845E00180F36 /* ViewContainer */,
 				CFAA71A921F79A2F0089F40D /* Image */,
 				CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */,
 				CF7CB4D721F36870008E9EE6 /* WeakBox.swift */,
+				CFF5818A21FC4A110003BAC6 /* UIViewController+Child.swift */,
+				CFF5819821FC67080003BAC6 /* UIView+Nib.swift */,
+				CF40F94121FC894C00180F36 /* ViewControllerFactory.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -303,6 +368,7 @@
 		CF7CB4F321F4BD0E008E9EE6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CFD4AD7521F8E40B006238EE /* Location */,
 				CFAA719E21F659F10089F40D /* Images */,
 				CF7CB4F521F4BD36008E9EE6 /* Authorization */,
 				CF7CB4F421F4BD2E008E9EE6 /* FoursquareApi */,
@@ -315,6 +381,7 @@
 			children = (
 				CF7CB4F621F4BD69008E9EE6 /* FoursquareApi.swift */,
 				CF7CB50221F50081008E9EE6 /* FoursquareApi+Profile.swift */,
+				CFD4AD7821FA3F48006238EE /* FoursquareApi+SearchVenues.swift */,
 				CF7CB4F821F4CF79008E9EE6 /* FoursquareApi+Response.swift */,
 				CF7CB4FC21F4E4AD008E9EE6 /* FoursquareApiParser.swift */,
 				CF7CB50421F50EF4008E9EE6 /* AuthorizationErrorHandler.swift */,
@@ -353,9 +420,46 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		CFD4AD6821F8DE19006238EE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CFD4AD6F21F8DF4D006238EE /* MapViewController.swift */,
+				CFD4AD7021F8DF4D006238EE /* MapViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFD4AD7521F8E40B006238EE /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CFD4AD7621F8E429006238EE /* LocationService.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		CFF5818521FC34100003BAC6 /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				CFF5819421FC601B0003BAC6 /* PlaceholderView.swift */,
+				CFF5819621FC60250003BAC6 /* PlaceholderView.xib */,
+			);
+			path = Placeholder;
+			sourceTree = "<group>";
+		};
+		CFF5819121FC5C6D0003BAC6 /* VenueDescription */ = {
+			isa = PBXGroup;
+			children = (
+				CF40F93D21FC87AC00180F36 /* VenueDescriptionFactory.swift */,
+				CFF5819A21FC6A250003BAC6 /* VenueDescriptionView.swift */,
+				CFF5819C21FC6A2F0003BAC6 /* VenueDescriptionView.xib */,
+			);
+			path = VenueDescription;
+			sourceTree = "<group>";
+		};
 		DACECF50894139D2B753AC71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFD4AD7321F8E06B006238EE /* MapKit.framework */,
 				0E61AE2A5ACFB3E1A2BCA6DA /* Pods_FoursquareKurenkov.framework */,
 			);
 			name = Frameworks;
@@ -414,6 +518,11 @@
 				TargetAttributes = {
 					CF7CB49C21F35B73008E9EE6 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					CF7CB4B021F35B7A008E9EE6 = {
 						CreatedOnToolsVersion = 10.1;
@@ -448,7 +557,10 @@
 				CF3C4F0821F63E6E00257AA7 /* ProfileNameCell.xib in Resources */,
 				CF7CB4E421F4A6E8008E9EE6 /* Localizable.strings in Resources */,
 				CF7CB4DE21F491C2008E9EE6 /* AuthorizationViewController.xib in Resources */,
+				CFF5819D21FC6A2F0003BAC6 /* VenueDescriptionView.xib in Resources */,
+				CFD4AD7221F8DF4D006238EE /* MapViewController.xib in Resources */,
 				CF7CB4AB21F35B7A008E9EE6 /* LaunchScreen.storyboard in Resources */,
+				CFF5819721FC60250003BAC6 /* PlaceholderView.xib in Resources */,
 				CF3C4EFD21F6333400257AA7 /* ProfileViewController.xib in Resources */,
 				CFAA719D21F642FF0089F40D /* ProfileAvatarCell.xib in Resources */,
 				CF3C4F0C21F63E8400257AA7 /* ProfileBioCell.xib in Resources */,
@@ -526,38 +638,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7CB4E221F49ED7008E9EE6 /* LaunchViewControllersFactory.swift in Sources */,
+				CF7CB4E221F49ED7008E9EE6 /* TabBarViewControllerFactory.swift in Sources */,
+				CFF5819B21FC6A250003BAC6 /* VenueDescriptionView.swift in Sources */,
 				CF7CB4CE21F35C32008E9EE6 /* LaunchInteractor.swift in Sources */,
 				CFAA71AB21F79A3F0089F40D /* ImageView.swift in Sources */,
 				CF7CB4FD21F4E4AD008E9EE6 /* FoursquareApiParser.swift in Sources */,
 				CF7CB4E621F4AB54008E9EE6 /* AuthorizationPresenter.swift in Sources */,
+				CF40F93C21FC847500180F36 /* ViewContainer.swift in Sources */,
 				CFAA71A421F6EB520089F40D /* MemoryImagesCache.swift in Sources */,
+				CFD4AD7721F8E429006238EE /* LocationService.swift in Sources */,
+				CF40F93E21FC87AC00180F36 /* VenueDescriptionFactory.swift in Sources */,
 				CF7CB50321F50081008E9EE6 /* FoursquareApi+Profile.swift in Sources */,
 				CF7CB4D021F35C32008E9EE6 /* AuthorizationService.swift in Sources */,
 				CFD4AD6321F7AE40006238EE /* ImageIdentifier.swift in Sources */,
+				CFD4AD6A21F8DE2B006238EE /* MapView.swift in Sources */,
 				CF7CB4F221F4B304008E9EE6 /* ProfileInteractor.swift in Sources */,
 				CFAA71AD21F79A610089F40D /* ImagePresenter.swift in Sources */,
 				CF7CB4CF21F35C32008E9EE6 /* LaunchRouter.swift in Sources */,
 				CF3C4F0F21F6407B00257AA7 /* ProfileLogoutCell.swift in Sources */,
 				CF7CB50521F50EF4008E9EE6 /* AuthorizationErrorHandler.swift in Sources */,
 				CF7CB4DD21F491C2008E9EE6 /* AuthorizationViewController.swift in Sources */,
+				CFF5817F21FB78BF0003BAC6 /* MapRouter.swift in Sources */,
+				CF40F94421FC8B7000180F36 /* ProfileViewControllerFactory.swift in Sources */,
+				CFF5818B21FC4A110003BAC6 /* UIViewController+Child.swift in Sources */,
+				CF40F94221FC894C00180F36 /* ViewControllerFactory.swift in Sources */,
 				CF7CB4A121F35B73008E9EE6 /* AppDelegate.swift in Sources */,
 				CF7CB4FF21F4F43B008E9EE6 /* MemoryProfileStorage.swift in Sources */,
 				CF7CB4D121F35C32008E9EE6 /* UserDefaultsAuthorizationStorage.swift in Sources */,
 				CFAA719C21F642FF0089F40D /* ProfileAvatarCell.swift in Sources */,
+				CF40F94621FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift in Sources */,
 				CF7CB4F921F4CF79008E9EE6 /* FoursquareApi+Response.swift in Sources */,
 				CF3C4F0B21F63E8400257AA7 /* ProfileBioCell.swift in Sources */,
+				CFD4AD6C21F8DE4C006238EE /* MapPresenter.swift in Sources */,
 				CF7CB50721F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift in Sources */,
 				CF3C4F0721F63E6E00257AA7 /* ProfileNameCell.swift in Sources */,
 				CF7CB4D821F36870008E9EE6 /* WeakBox.swift in Sources */,
+				CFF5819521FC601B0003BAC6 /* PlaceholderView.swift in Sources */,
+				CFF5818121FB7A470003BAC6 /* MemoryVenuesStorage.swift in Sources */,
 				CF3C4EFC21F6333400257AA7 /* ProfileViewController.swift in Sources */,
+				CFD4AD7121F8DF4D006238EE /* MapViewController.swift in Sources */,
+				CFD4AD6E21F8DE6E006238EE /* MapInteractor.swift in Sources */,
 				CF7CB4F021F4B2D1008E9EE6 /* ProfilePresenter.swift in Sources */,
 				CF3C4EFF21F63E0900257AA7 /* ProfileView.swift in Sources */,
 				CFAA71A021F65A320089F40D /* ImagesServise.swift in Sources */,
 				CFAA71A621F6EB810089F40D /* DiskImagesCache.swift in Sources */,
 				CFAA71B021F79BB80089F40D /* ImageViewConfigurator.swift in Sources */,
-				CFAA71A221F6696C0089F40D /* Profile.swift in Sources */,
+				CFD4AD7921FA3F48006238EE /* FoursquareApi+SearchVenues.swift in Sources */,
+				CFF5819921FC67080003BAC6 /* UIView+Nib.swift in Sources */,
 				CF7CB4F721F4BD69008E9EE6 /* FoursquareApi.swift in Sources */,
+				CF40F94021FC88A300180F36 /* MapViewControllerFactory.swift in Sources */,
 				CFD4AD6521F8D300006238EE /* FoursquareImageIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

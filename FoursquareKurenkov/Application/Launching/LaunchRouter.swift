@@ -2,10 +2,13 @@ import UIKit
 
 class LaunchRouter {
 
-    private let viewControllersFactory: LaunchViewControllersFactory
+    private let rootFactory: ViewControllerFactory
+    private let loginFactory: ViewControllerFactory
 
-    init(viewControllersFactory: LaunchViewControllersFactory) {
-        self.viewControllersFactory = viewControllersFactory
+    init(rootFactory: ViewControllerFactory,
+         loginFactory: ViewControllerFactory) {
+        self.rootFactory = rootFactory
+        self.loginFactory = loginFactory
     }
 
     var window: UIWindow?
@@ -23,7 +26,10 @@ class LaunchRouter {
             return
         }
 
-        let viewController = viewControllersFactory.authorizationViewController()
+        guard let viewController = loginFactory.viewController() else {
+            return
+        }
+
         show(viewController: viewController)
         state = .shownLoginScreen
     }
@@ -33,7 +39,10 @@ class LaunchRouter {
             return
         }
 
-        let viewController = viewControllersFactory.applicationMainViewController()
+        guard let viewController = rootFactory.viewController() else {
+            return
+        }
+
         show(viewController: viewController)
         state = .shownApplication
     }
