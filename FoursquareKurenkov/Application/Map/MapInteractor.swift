@@ -3,17 +3,14 @@ import CoreLocation
 
 protocol MapInteractorInput: class {
     func searchVenuesForCurrentLocation()
+    func searchVenues(for coordinate: CLLocationCoordinate2D)
 }
 
 protocol MapInteractorOutput: class {
-    func startSearchVenues()
+    func startSearchVenuesForCurrentLocation()
+    func startSearchVenuesForArbitraryLocation()
     func searchVenuesCompletedSuccessfully(_ venues: [Venue])
     func searchVenuesFailed(withError error: Error?)
-}
-
-protocol VenuesStorage {
-    func store(venues: [Venue])
-    func restore(venueWith identifier: String) -> Venue?
 }
 
 class MapInteractor: MapInteractorInput, LocationServiceObserver {
@@ -41,15 +38,20 @@ class MapInteractor: MapInteractorInput, LocationServiceObserver {
     // MARK: - MapInteractorInput
 
     func searchVenuesForCurrentLocation() {
-        output?.startSearchVenues()
+        output?.startSearchVenuesForCurrentLocation()
         locationService.requestLocation()
+    }
+
+    func searchVenues(for coordinate: CLLocationCoordinate2D) {
+        output?.startSearchVenuesForArbitraryLocation()
+        requestVenues(for: coordinate)
     }
 
     // MARK: - LocationServiceObserver
 
     func updateLocations(_ locations: [CLLocation]) {
         if let coordinate = locations.first?.coordinate {
-            searchVenues(for: coordinate)
+            requestVenues(for: coordinate)
         }
     }
 
@@ -59,7 +61,7 @@ class MapInteractor: MapInteractorInput, LocationServiceObserver {
 
     // MARK: - Private
 
-    private func searchVenues(for coordinate: CLLocationCoordinate2D) {
+    private func requestVenues(for coordinate: CLLocationCoordinate2D) {
         api.searchVenues(latitude: coordinate.latitude,
                          longitude: coordinate.longitude,
                          radius: scanRadius) { (result) in

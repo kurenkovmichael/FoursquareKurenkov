@@ -14,8 +14,10 @@ class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate, View
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var popoverBackgroundView: UIView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var refreshActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var redoSearchActivityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var redoSearchButton: UIButton!
     @IBOutlet weak var popoverContainerBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -34,13 +36,17 @@ class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate, View
         containerView.layer.shadowOpacity = 0.2
         containerView.layer.shadowOffset = CGSize(width: 0, height: 6)
 
-        refreshButton.setImage(UIImage(named: "location"), for: .normal)
-        refreshButton.setImage(UIImage(), for: .disabled)
         refreshButton.layer.masksToBounds = true
         refreshButton.layer.cornerRadius = 24
         refreshButton.layer.borderWidth = 0.5
         refreshButton.layer.borderColor = UIColor.lightGray.cgColor
         refreshButton.tintColorDidChange()
+
+        redoSearchButton.layer.masksToBounds = true
+        redoSearchButton.layer.cornerRadius = 24
+        redoSearchButton.layer.borderWidth = 0.5
+        redoSearchButton.layer.borderColor = UIColor.lightGray.cgColor
+        redoSearchButton.tintColorDidChange()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -59,14 +65,32 @@ class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate, View
         mapView.removeAnnotations(annotations)
     }
 
-    func showActivityIndicator() {
+    func showRefreshActivityIndicator() {
         refreshButton.isEnabled = false
-        activityIndicatorView.startAnimating()
+        redoSearchButton.isEnabled = false
+        refreshButton.setImage(UIImage(), for: .normal)
+        refreshActivityIndicatorView.startAnimating()
     }
 
-    func hideActivityIndicator() {
+    func hideRefreshActivityIndicator() {
         refreshButton.isEnabled = true
-        activityIndicatorView.stopAnimating()
+        redoSearchButton.isEnabled = true
+        refreshButton.setImage(UIImage(named: "location"), for: .normal)
+        refreshActivityIndicatorView.stopAnimating()
+    }
+
+    func showRedoSearchActivityIndicator() {
+        refreshButton.isEnabled = false
+        redoSearchButton.isEnabled = false
+        redoSearchButton.setImage(UIImage(), for: .normal)
+        redoSearchActivityIndicatorView.startAnimating()
+    }
+
+    func hideRedoSearchActivityIndicator() {
+        refreshButton.isEnabled = true
+        redoSearchButton.isEnabled = true
+        redoSearchButton.setImage(UIImage(named: "navigation"), for: .normal)
+        redoSearchActivityIndicatorView.stopAnimating()
     }
 
     // MARK: - ViewContainerDelegate
@@ -112,6 +136,11 @@ class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate, View
 
     @IBAction func refreshButtonPressed(_ sender: Any) {
         output.didTriggeredRefreshButtonPressedEvent()
+    }
+
+    @IBAction func redoSearchButtonPressed(_ sender: Any) {
+        let coordinate = mapView.centerCoordinate
+        output.didTriggeredRedoSearchButtonPressedEvent(coordinate)
     }
 
 }

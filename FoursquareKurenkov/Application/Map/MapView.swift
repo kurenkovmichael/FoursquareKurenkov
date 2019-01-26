@@ -20,13 +20,16 @@ class Annotation: NSObject {
 protocol MapViewInput: class {
     func show(annotations: [Annotation])
     func hide(annotations: [Annotation])
-    func showActivityIndicator()
-    func hideActivityIndicator()
+    func showRefreshActivityIndicator()
+    func hideRefreshActivityIndicator()
+    func showRedoSearchActivityIndicator()
+    func hideRedoSearchActivityIndicator()
 }
 
 protocol MapViewOutput: class {
     func didTriggeredWillAppearEvent()
     func didTriggeredRefreshButtonPressedEvent()
+    func didTriggeredRedoSearchButtonPressedEvent(_ coordinate: CLLocationCoordinate2D)
     func didTriggeredSelectAnnotationEvent(_ annotation: Annotation)
     func didTriggeredDeselectAnnotationEvent(_ annotation: Annotation)
 }

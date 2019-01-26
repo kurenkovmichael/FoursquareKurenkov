@@ -12,11 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="FoursquareKurenkov" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicatorView" destination="rSR-Oo-UzP" id="KY2-m5-8l2"/>
                 <outlet property="containerView" destination="0bH-GN-6Gc" id="6Cv-7L-Jjl"/>
                 <outlet property="mapView" destination="PLQ-Dt-Dxo" id="IWn-8a-jl6"/>
                 <outlet property="popoverBackgroundView" destination="LoU-69-dQj" id="Ev4-Yi-tQk"/>
                 <outlet property="popoverContainerBottomConstraint" destination="wD9-a3-l0g" id="b56-YT-2Ek"/>
+                <outlet property="redoSearchActivityIndicatorView" destination="8eZ-xR-DUa" id="tx7-Op-4NM"/>
+                <outlet property="redoSearchButton" destination="0QJ-PK-axN" id="lVe-ZM-4Wp"/>
+                <outlet property="refreshActivityIndicatorView" destination="rSR-Oo-UzP" id="eT6-JJ-b6C"/>
                 <outlet property="refreshButton" destination="3ZT-zJ-iq2" id="F03-t7-ryI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -68,7 +70,7 @@
                     </variation>
                 </view>
                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZT-zJ-iq2">
-                    <rect key="frame" x="311" y="587" width="48" height="48"/>
+                    <rect key="frame" x="311" y="573" width="48" height="48"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="Nar-0n-W9R"/>
@@ -81,21 +83,41 @@
                     </connections>
                 </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rSR-Oo-UzP">
-                    <rect key="frame" x="317.5" y="593.5" width="37" height="37"/>
+                    <rect key="frame" x="317.5" y="579.5" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QJ-PK-axN">
+                    <rect key="frame" x="311" y="493" width="48" height="48"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="b6C-Sq-g7o"/>
+                        <constraint firstAttribute="width" constant="48" id="rN6-Zm-nfD"/>
+                    </constraints>
+                    <state key="normal" image="navigation"/>
+                    <connections>
+                        <action selector="redoSearchButtonPressed:" destination="-1" eventType="touchUpInside" id="wze-TG-e3t"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8eZ-xR-DUa">
+                    <rect key="frame" x="317.5" y="499.5" width="37" height="37"/>
                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8eZ-xR-DUa" firstAttribute="centerY" secondItem="0QJ-PK-axN" secondAttribute="centerY" constant="1" id="6X4-zR-qhG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Pd9-Fo-bRN" secondAttribute="bottom" id="By6-5V-Hg8"/>
                 <constraint firstItem="rSR-Oo-UzP" firstAttribute="centerX" secondItem="3ZT-zJ-iq2" secondAttribute="centerX" constant="1" id="Ejn-VE-DrD"/>
                 <constraint firstItem="rSR-Oo-UzP" firstAttribute="centerY" secondItem="3ZT-zJ-iq2" secondAttribute="centerY" constant="1" id="F5w-hh-H5r"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3ZT-zJ-iq2" secondAttribute="trailing" constant="16" id="Mvo-hA-bsB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0QJ-PK-axN" secondAttribute="trailing" constant="16" id="N5n-Co-pVt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PLQ-Dt-Dxo" secondAttribute="bottom" id="aEF-ua-wG2"/>
+                <constraint firstItem="8eZ-xR-DUa" firstAttribute="centerX" secondItem="0QJ-PK-axN" secondAttribute="centerX" constant="1" id="bHk-jX-41s"/>
+                <constraint firstItem="3ZT-zJ-iq2" firstAttribute="top" secondItem="0QJ-PK-axN" secondAttribute="bottom" constant="32" id="cx5-LM-xkT"/>
                 <constraint firstItem="PLQ-Dt-Dxo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="i6p-K9-HxP"/>
                 <constraint firstItem="Pd9-Fo-bRN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xID-SR-RWG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PLQ-Dt-Dxo" secondAttribute="trailing" id="xaG-LB-b1p"/>
-                <constraint firstItem="Pd9-Fo-bRN" firstAttribute="top" secondItem="3ZT-zJ-iq2" secondAttribute="bottom" constant="32" id="xkD-YO-bIo"/>
+                <constraint firstItem="Pd9-Fo-bRN" firstAttribute="top" secondItem="3ZT-zJ-iq2" secondAttribute="bottom" constant="46" id="xkD-YO-bIo"/>
                 <constraint firstItem="Pd9-Fo-bRN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="z17-UY-9Sz"/>
                 <constraint firstItem="PLQ-Dt-Dxo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zbJ-ae-6KO"/>
             </constraints>
@@ -105,5 +127,6 @@
     </objects>
     <resources>
         <image name="location" width="30.719999313354492" height="30.719999313354492"/>
+        <image name="navigation" width="30.719999313354492" height="30.719999313354492"/>
     </resources>
 </document>

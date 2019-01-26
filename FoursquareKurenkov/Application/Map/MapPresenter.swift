@@ -23,6 +23,10 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
         interactor.searchVenuesForCurrentLocation()
     }
 
+    func didTriggeredRedoSearchButtonPressedEvent(_ coordinate: CLLocationCoordinate2D) {
+        interactor.searchVenues(for: coordinate)
+    }
+
     func didTriggeredSelectAnnotationEvent(_ annotation: Annotation) {
         resetHideViewTimer()
         router.showVenueDescription(with: annotation.identifier)
@@ -37,12 +41,17 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
 
     private var shownAnnotations: [Annotation] = []
 
-    func startSearchVenues() {
-        view?.showActivityIndicator()
+    func startSearchVenuesForCurrentLocation() {
+        view?.showRefreshActivityIndicator()
+    }
+
+    func startSearchVenuesForArbitraryLocation() {
+        view?.showRedoSearchActivityIndicator()
     }
 
     func searchVenuesCompletedSuccessfully(_ venues: [Venue]) {
-        view?.hideActivityIndicator()
+        view?.hideRefreshActivityIndicator()
+        view?.hideRedoSearchActivityIndicator()
         view?.hide(annotations: shownAnnotations)
         shownAnnotations = conver(venues: venues)
         if shownAnnotations.count > 0 {
@@ -54,7 +63,8 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
     }
 
     func searchVenuesFailed(withError error: Error?) {
-        view?.hideActivityIndicator()
+        view?.hideRefreshActivityIndicator()
+        view?.hideRedoSearchActivityIndicator()
         router.showPlaceholder(withError: error)
         scheduleHideViewTimer()
     }
