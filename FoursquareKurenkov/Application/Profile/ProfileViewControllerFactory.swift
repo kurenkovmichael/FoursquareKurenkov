@@ -20,7 +20,7 @@ class ProfileViewControllerFactory: ViewControllerFactory {
 
         let interactor = ProfileInteractor(authorizationService: authorizationService,
                                            api: api,
-                                           storage: MemoryProfileStorage())
+                                           storage: UserDefaultsProfileStorage())
 
         let router = ErrorPoppupRouter(container: ViewContainer(delegate: view.popupView))
         let presenter = ProfilePresenter(view: view, interactor: interactor, router: router)

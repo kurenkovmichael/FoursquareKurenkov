@@ -51,7 +51,7 @@
 		CF7CB4F721F4BD69008E9EE6 /* FoursquareApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4F621F4BD69008E9EE6 /* FoursquareApi.swift */; };
 		CF7CB4F921F4CF79008E9EE6 /* FoursquareApi+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4F821F4CF79008E9EE6 /* FoursquareApi+Response.swift */; };
 		CF7CB4FD21F4E4AD008E9EE6 /* FoursquareApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4FC21F4E4AD008E9EE6 /* FoursquareApiParser.swift */; };
-		CF7CB4FF21F4F43B008E9EE6 /* MemoryProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4FE21F4F43B008E9EE6 /* MemoryProfileStorage.swift */; };
+		CF7CB4FF21F4F43B008E9EE6 /* UserDefaultsProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4FE21F4F43B008E9EE6 /* UserDefaultsProfileStorage.swift */; };
 		CF7CB50321F50081008E9EE6 /* FoursquareApi+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB50221F50081008E9EE6 /* FoursquareApi+Profile.swift */; };
 		CF7CB50521F50EF4008E9EE6 /* AuthorizationErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB50421F50EF4008E9EE6 /* AuthorizationErrorHandler.swift */; };
 		CF7CB50721F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB50621F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift */; };
@@ -172,7 +172,7 @@
 		CF7CB4F621F4BD69008E9EE6 /* FoursquareApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareApi.swift; sourceTree = "<group>"; };
 		CF7CB4F821F4CF79008E9EE6 /* FoursquareApi+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoursquareApi+Response.swift"; sourceTree = "<group>"; };
 		CF7CB4FC21F4E4AD008E9EE6 /* FoursquareApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareApiParser.swift; sourceTree = "<group>"; };
-		CF7CB4FE21F4F43B008E9EE6 /* MemoryProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryProfileStorage.swift; sourceTree = "<group>"; };
+		CF7CB4FE21F4F43B008E9EE6 /* UserDefaultsProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProfileStorage.swift; sourceTree = "<group>"; };
 		CF7CB50221F50081008E9EE6 /* FoursquareApi+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoursquareApi+Profile.swift"; sourceTree = "<group>"; };
 		CF7CB50421F50EF4008E9EE6 /* AuthorizationErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationErrorHandler.swift; sourceTree = "<group>"; };
 		CF7CB50621F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationService+AuthTokenProvider.swift"; sourceTree = "<group>"; };
@@ -281,6 +281,7 @@
 		CF40F96421FD80C500180F36 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				CFE33A2321FE6CDC00D891EE /* UserDefaults */,
 				CF40F96521FD80F000180F36 /* Memory */,
 				CF40F96621FD81EC00180F36 /* CoreData */,
 			);
@@ -290,7 +291,6 @@
 		CF40F96521FD80F000180F36 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
-				CF7CB4FE21F4F43B008E9EE6 /* MemoryProfileStorage.swift */,
 				CFF5818021FB7A470003BAC6 /* MemoryVenuesStorage.swift */,
 			);
 			path = Memory;
@@ -664,6 +664,14 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		CFE33A2321FE6CDC00D891EE /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4FE21F4F43B008E9EE6 /* UserDefaultsProfileStorage.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		CFF5818521FC34100003BAC6 /* Placeholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -916,7 +924,7 @@
 				CF9D1A5B21FD9F67009D31DB /* Location.swift in Sources */,
 				CF9D1A8721FDFC9B009D31DB /* DataProviderProxy.swift in Sources */,
 				CF9D1A9021FE0511009D31DB /* UITableView+Cells.swift in Sources */,
-				CF7CB4FF21F4F43B008E9EE6 /* MemoryProfileStorage.swift in Sources */,
+				CF7CB4FF21F4F43B008E9EE6 /* UserDefaultsProfileStorage.swift in Sources */,
 				CF40F94E21FC950B00180F36 /* FavoritesView.swift in Sources */,
 				CF7CB4D121F35C32008E9EE6 /* UserDefaultsAuthorizationStorage.swift in Sources */,
 				CF9D1A8121FDDE09009D31DB /* DataProvider.swift in Sources */,
