@@ -43,10 +43,10 @@ class ProfileViewController: UITableViewController, ProfileViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        registerCell(ProfileAvatarCell.self, for: tableView)
-        registerCell(ProfileNameCell.self, for: tableView)
-        registerCell(ProfileBioCell.self, for: tableView)
-        registerCell(ProfileLogoutCell.self, for: tableView)
+        tableView.registerCell(ProfileAvatarCell.self)
+        tableView.registerCell(ProfileNameCell.self)
+        tableView.registerCell(ProfileBioCell.self)
+        tableView.registerCell(ProfileLogoutCell.self)
 
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self,
@@ -65,53 +65,45 @@ class ProfileViewController: UITableViewController, ProfileViewInput {
         output.didTriggeredPulldownEvent()
     }
 
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let profileData = data[indexPath.row]
         switch profileData {
         case .avatar(let identifier):
-            let cell = dequeueCell(ProfileAvatarCell.self,
-                                   from: tableView,
-                                   for: indexPath)
+            let cell = tableView.dequeueCell(ProfileAvatarCell.self, for: indexPath)
             imageViewConfigurator.configure(imageView: cell, identifier: identifier)
             return cell
 
         case .name(let firstName, let lastName):
-            let cell = dequeueCell(ProfileNameCell.self,
-                                   from: tableView,
-                                   for: indexPath)
+            let cell = tableView.dequeueCell(ProfileNameCell.self, for: indexPath)
             cell.configure(firstName: firstName, lastName: lastName)
             return cell
 
         case .contact(let type, let content):
-            let cell = dequeueCell(ProfileBioCell.self,
-                                   from: tableView,
-                                   for: indexPath)
+            let cell = tableView.dequeueCell(ProfileBioCell.self, for: indexPath)
             cell.configure(bio: "\(type): \(content)")
             return cell
 
         case .bio(let bio):
-            let cell = dequeueCell(ProfileBioCell.self,
-                                   from: tableView,
-                                   for: indexPath)
+            let cell = tableView.dequeueCell(ProfileBioCell.self, for: indexPath)
             cell.configure(bio: bio)
             return cell
 
         case .logout:
-            return dequeueCell(ProfileLogoutCell.self,
-                               from: tableView,
-                               for: indexPath)
+            return tableView.dequeueCell(ProfileLogoutCell.self, for: indexPath)
         }
     }
 
-    override func tableView(_ tableView: UITableView,
-                            didSelectRowAt indexPath: IndexPath) {
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
         let profileData = data[indexPath.row]
         switch profileData {
         case .logout:
@@ -121,27 +113,16 @@ class ProfileViewController: UITableViewController, ProfileViewInput {
         }
     }
 
-    override func tableView(_ tableView: UITableView,
-                            willDisplay cell: UITableViewCell,
-                            forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
         if let avatarCell = cell as? ProfileAvatarCell {
             avatarCell.cellWillDisplay()
         }
     }
 
-    // MARK: - Pribate
-
-    func registerCell<T>(_ type: T.Type, for tableView: UITableView)
-        where T: UITableViewCell {
-            let cellType = String(describing: T.self)
-            tableView.register(UINib.init(nibName: cellType, bundle: nil),
-                               forCellReuseIdentifier: cellType)
     }
 
-    func dequeueCell<T>(_ type: T.Type, from tableView: UITableView,
-                        for indexPath: IndexPath) -> T
-        where T: UITableViewCell {
-            return tableView.dequeueReusableCell(withIdentifier: String(describing: T.self),
-                                                 for: indexPath) as? T ?? T()
     }
+
 }

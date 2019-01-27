@@ -1,14 +1,11 @@
 import Foundation
 
-struct FoursquareImageIdentifier: Codable, ImageIdentifier {
+struct FoursquareImageIdentifier {
     let prefix: String
     let suffix: String
+}
 
-    public func makeUrl(with size: ImageSize) -> URL? {
-        let url = prefix + imageUrlSizePart(from: size) + suffix
-        return URL(string: url)
-    }
-
+extension FoursquareImageIdentifier: ImageIdentifier {
     private func imageUrlSizePart(from size: ImageSize) -> String {
         switch size {
         case .widthHeight(let width, let height):
@@ -22,5 +19,12 @@ struct FoursquareImageIdentifier: Codable, ImageIdentifier {
         case .height(let height):
             return "height\(height)"
         }
+    }
+}
+
+extension FoursquareImageIdentifier: Codable {
+    public func makeUrl(with size: ImageSize) -> URL? {
+        let url = prefix + imageUrlSizePart(from: size) + suffix
+        return URL(string: url)
     }
 }

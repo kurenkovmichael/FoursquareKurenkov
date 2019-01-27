@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var locationService: LocationService!
     private var imagesServise: ImagesServise!
     private var launchInteractor: LaunchInteractor!
+    private var coreDataStack: CoreDataStack!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -60,6 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         imagesServise = ImagesServise(syncCache: MemoryImagesCache(),
                                       asyncCache: DiskImagesCache(name: "ImagesCache"))
+
+        coreDataStack = CoreDataStack(name: "FoursquareKurenkov")
+        coreDataStack.setupCoreDataStack()
     }
 
     private func loginViewControllerFactory() -> ViewControllerFactory {
@@ -69,12 +73,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func rootViewControllerFactory() -> ViewControllerFactory {
         let mapFactory = MapViewControllerFactory(api: api, locationService: locationService)
 
+        let favoritesFactory = FavoritesViewControllerFactory(api: api, coreDataStack: coreDataStack)
+
         let profileFactory = ProfileViewControllerFactory(authorizationService: authorizationService,
                                                           api: api,
                                                           imagesServise: imagesServise)
 
         return TabBarViewControllerFactory(mapFactory: mapFactory,
-                                           favoritesFactory: profileFactory,
+                                           favoritesFactory: favoritesFactory,
                                            profileFactory: profileFactory)
     }
 }

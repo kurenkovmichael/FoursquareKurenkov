@@ -43,3 +43,13 @@ class VenueDescriptionView: UIView {
     }
 
 }
+
+extension VenueDescriptionView {
+    func configure(with venue: Venue) {
+        configure(name: venue.name,
+                  address: venue.location?.formattedAddress,
+                  categories: venue.categories?.compactMap { (category) -> String? in
+                    return category.name
+            })
+    }
+}

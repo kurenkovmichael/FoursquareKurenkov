@@ -7,11 +7,7 @@ class VenueDescriptionFactory {
             return nil
         }
 
-        view.configure(name: venue.name,
-                       address: venue.location?.formattedAddress,
-                       categories: venue.categories?.compactMap { (category) -> String? in
-                        return category.name
-            })
+        view.configure(with: venue)
         return view
     }
 

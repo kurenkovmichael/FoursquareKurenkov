@@ -12,13 +12,4 @@ extension FoursquareApi {
         let errorDetail: String?
         let errorType: String?
     }
-
-    struct ResponseUser: Codable {
-        let user: Profile?
-    }
-
-    struct ResponseVenues: Codable {
-        let venues: [Venue]?
-    }
-
 }

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9CA466170A26D3BF9C584C8F /* Pods_FoursquareKurenkov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61AE2A5ACFB3E1A2BCA6DA /* Pods_FoursquareKurenkov.framework */; };
-		CF3C4EFC21F6333400257AA7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C4EFA21F6333400257AA7 /* ProfileViewController.swift */; };
-		CF3C4EFD21F6333400257AA7 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF3C4EFB21F6333400257AA7 /* ProfileViewController.xib */; };
 		CF3C4EFF21F63E0900257AA7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C4EFE21F63E0900257AA7 /* ProfileView.swift */; };
 		CF3C4F0721F63E6E00257AA7 /* ProfileNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C4F0521F63E6E00257AA7 /* ProfileNameCell.swift */; };
 		CF3C4F0821F63E6E00257AA7 /* ProfileNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF3C4F0621F63E6E00257AA7 /* ProfileNameCell.xib */; };
@@ -23,6 +21,18 @@
 		CF40F94221FC894C00180F36 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94121FC894C00180F36 /* ViewControllerFactory.swift */; };
 		CF40F94421FC8B7000180F36 /* ProfileViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94321FC8B7000180F36 /* ProfileViewControllerFactory.swift */; };
 		CF40F94621FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94521FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift */; };
+		CF40F94821FC946700180F36 /* FavoritesViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94721FC946700180F36 /* FavoritesViewControllerFactory.swift */; };
+		CF40F94B21FC949200180F36 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94921FC949200180F36 /* FavoritesViewController.swift */; };
+		CF40F94C21FC949200180F36 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF40F94A21FC949200180F36 /* FavoritesViewController.xib */; };
+		CF40F94E21FC950B00180F36 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94D21FC950B00180F36 /* FavoritesView.swift */; };
+		CF40F95021FC951C00180F36 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F94F21FC951C00180F36 /* FavoritesPresenter.swift */; };
+		CF40F95221FC952800180F36 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F95121FC952800180F36 /* FavoritesInteractor.swift */; };
+		CF40F95721FC9B3C00180F36 /* FoursquareApi+Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F95621FC9B3C00180F36 /* FoursquareApi+Favorites.swift */; };
+		CF40F95B21FCB6DB00180F36 /* VenueListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F95A21FCB6DB00180F36 /* VenueListStorage.swift */; };
+		CF40F96021FCBDD800180F36 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F95E21FCBDD800180F36 /* ProfileViewController.swift */; };
+		CF40F96121FCBDD800180F36 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF40F95F21FCBDD800180F36 /* ProfileViewController.xib */; };
+		CF40F96321FCC0D200180F36 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F96221FCC0D200180F36 /* ProfileRouter.swift */; };
+		CF40F96821FD820400180F36 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F96721FD820400180F36 /* CoreDataStack.swift */; };
 		CF7CB4A121F35B73008E9EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4A021F35B73008E9EE6 /* AppDelegate.swift */; };
 		CF7CB4AB21F35B7A008E9EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4A921F35B7A008E9EE6 /* LaunchScreen.storyboard */; };
 		CF7CB4B621F35B7A008E9EE6 /* FoursquareKurenkovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4B521F35B7A008E9EE6 /* FoursquareKurenkovTests.swift */; };
@@ -45,6 +55,27 @@
 		CF7CB50321F50081008E9EE6 /* FoursquareApi+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB50221F50081008E9EE6 /* FoursquareApi+Profile.swift */; };
 		CF7CB50521F50EF4008E9EE6 /* AuthorizationErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB50421F50EF4008E9EE6 /* AuthorizationErrorHandler.swift */; };
 		CF7CB50721F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB50621F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift */; };
+		CF9D1A5021FD99E8009D31DB /* FoursquareKurenkov.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A4E21FD99E8009D31DB /* FoursquareKurenkov.xcdatamodeld */; };
+		CF9D1A5221FD9CDD009D31DB /* VenuesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A5121FD9CDD009D31DB /* VenuesStorage.swift */; };
+		CF9D1A5621FD9D46009D31DB /* CoreDataVenueListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A5521FD9D46009D31DB /* CoreDataVenueListStorage.swift */; };
+		CF9D1A5921FD9F4E009D31DB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A5821FD9F4E009D31DB /* Venue.swift */; };
+		CF9D1A5B21FD9F67009D31DB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A5A21FD9F67009D31DB /* Location.swift */; };
+		CF9D1A5D21FD9F92009D31DB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A5C21FD9F92009D31DB /* Category.swift */; };
+		CF9D1A5F21FD9FE1009D31DB /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A5E21FD9FE1009D31DB /* Profile.swift */; };
+		CF9D1A7321FDAA7F009D31DB /* CategoryManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6321FDA777009D31DB /* CategoryManagedObject.swift */; };
+		CF9D1A7921FDAC19009D31DB /* _CategoryManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6C21FDA77F009D31DB /* _CategoryManagedObject.swift */; };
+		CF9D1A7A21FDAC19009D31DB /* _LocationManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6B21FDA77F009D31DB /* _LocationManagedObject.swift */; };
+		CF9D1A7B21FDAC19009D31DB /* _VenueListItemManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6D21FDA780009D31DB /* _VenueListItemManagedObject.swift */; };
+		CF9D1A7C21FDAC19009D31DB /* _VenueManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6E21FDA780009D31DB /* _VenueManagedObject.swift */; };
+		CF9D1A7D21FDAC1F009D31DB /* LocationManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6521FDA777009D31DB /* LocationManagedObject.swift */; };
+		CF9D1A7E21FDAC1F009D31DB /* VenueListItemManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6621FDA778009D31DB /* VenueListItemManagedObject.swift */; };
+		CF9D1A7F21FDAC1F009D31DB /* VenueManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A6421FDA777009D31DB /* VenueManagedObject.swift */; };
+		CF9D1A8121FDDE09009D31DB /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A8021FDDE09009D31DB /* DataProvider.swift */; };
+		CF9D1A8421FDFC52009D31DB /* ResultsControllerDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A8321FDFC52009D31DB /* ResultsControllerDataProvider.swift */; };
+		CF9D1A8721FDFC9B009D31DB /* DataProviderProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A8621FDFC9B009D31DB /* DataProviderProxy.swift */; };
+		CF9D1A8D21FE030E009D31DB /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A8B21FE030E009D31DB /* FavoriteCell.swift */; };
+		CF9D1A8E21FE030E009D31DB /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF9D1A8C21FE030E009D31DB /* FavoriteCell.xib */; };
+		CF9D1A9021FE0511009D31DB /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D1A8F21FE0511009D31DB /* UITableView+Cells.swift */; };
 		CFAA719C21F642FF0089F40D /* ProfileAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA719A21F642FF0089F40D /* ProfileAvatarCell.swift */; };
 		CFAA719D21F642FF0089F40D /* ProfileAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFAA719B21F642FF0089F40D /* ProfileAvatarCell.xib */; };
 		CFAA71A021F65A320089F40D /* ImagesServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA719F21F65A320089F40D /* ImagesServise.swift */; };
@@ -88,8 +119,6 @@
 		0E61AE2A5ACFB3E1A2BCA6DA /* Pods_FoursquareKurenkov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareKurenkov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		686BE2962F2978FD38C6FE18 /* Pods-FoursquareKurenkov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareKurenkov.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov.release.xcconfig"; sourceTree = "<group>"; };
 		7628C2FCD150E38A410BC712 /* Pods-FoursquareKurenkov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareKurenkov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov.debug.xcconfig"; sourceTree = "<group>"; };
-		CF3C4EFA21F6333400257AA7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		CF3C4EFB21F6333400257AA7 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		CF3C4EFE21F63E0900257AA7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CF3C4F0521F63E6E00257AA7 /* ProfileNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameCell.swift; sourceTree = "<group>"; };
 		CF3C4F0621F63E6E00257AA7 /* ProfileNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileNameCell.xib; sourceTree = "<group>"; };
@@ -103,6 +132,18 @@
 		CF40F94121FC894C00180F36 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		CF40F94321FC8B7000180F36 /* ProfileViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerFactory.swift; sourceTree = "<group>"; };
 		CF40F94521FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerFactory.swift; sourceTree = "<group>"; };
+		CF40F94721FC946700180F36 /* FavoritesViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerFactory.swift; sourceTree = "<group>"; };
+		CF40F94921FC949200180F36 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		CF40F94A21FC949200180F36 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		CF40F94D21FC950B00180F36 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		CF40F94F21FC951C00180F36 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		CF40F95121FC952800180F36 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		CF40F95621FC9B3C00180F36 /* FoursquareApi+Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoursquareApi+Favorites.swift"; sourceTree = "<group>"; };
+		CF40F95A21FCB6DB00180F36 /* VenueListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListStorage.swift; sourceTree = "<group>"; };
+		CF40F95E21FCBDD800180F36 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CF40F95F21FCBDD800180F36 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		CF40F96221FCC0D200180F36 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		CF40F96721FD820400180F36 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CF7CB49D21F35B73008E9EE6 /* FoursquareKurenkov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareKurenkov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7CB4A021F35B73008E9EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7CB4AA21F35B7A008E9EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,6 +171,27 @@
 		CF7CB50221F50081008E9EE6 /* FoursquareApi+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoursquareApi+Profile.swift"; sourceTree = "<group>"; };
 		CF7CB50421F50EF4008E9EE6 /* AuthorizationErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationErrorHandler.swift; sourceTree = "<group>"; };
 		CF7CB50621F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationService+AuthTokenProvider.swift"; sourceTree = "<group>"; };
+		CF9D1A4F21FD99E8009D31DB /* FoursquareKurenkov.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoursquareKurenkov.xcdatamodel; sourceTree = "<group>"; };
+		CF9D1A5121FD9CDD009D31DB /* VenuesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesStorage.swift; sourceTree = "<group>"; };
+		CF9D1A5521FD9D46009D31DB /* CoreDataVenueListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataVenueListStorage.swift; sourceTree = "<group>"; };
+		CF9D1A5821FD9F4E009D31DB /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		CF9D1A5A21FD9F67009D31DB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CF9D1A5C21FD9F92009D31DB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CF9D1A5E21FD9FE1009D31DB /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		CF9D1A6321FDA777009D31DB /* CategoryManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A6421FDA777009D31DB /* VenueManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A6521FDA777009D31DB /* LocationManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A6621FDA778009D31DB /* VenueListItemManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueListItemManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A6B21FDA77F009D31DB /* _LocationManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _LocationManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A6C21FDA77F009D31DB /* _CategoryManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CategoryManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A6D21FDA780009D31DB /* _VenueListItemManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _VenueListItemManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A6E21FDA780009D31DB /* _VenueManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _VenueManagedObject.swift; sourceTree = "<group>"; };
+		CF9D1A8021FDDE09009D31DB /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		CF9D1A8321FDFC52009D31DB /* ResultsControllerDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsControllerDataProvider.swift; sourceTree = "<group>"; };
+		CF9D1A8621FDFC9B009D31DB /* DataProviderProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProxy.swift; sourceTree = "<group>"; };
+		CF9D1A8B21FE030E009D31DB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		CF9D1A8C21FE030E009D31DB /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
+		CF9D1A8F21FE0511009D31DB /* UITableView+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
 		CFAA719A21F642FF0089F40D /* ProfileAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarCell.swift; sourceTree = "<group>"; };
 		CFAA719B21F642FF0089F40D /* ProfileAvatarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileAvatarCell.xib; sourceTree = "<group>"; };
 		CFAA719F21F65A320089F40D /* ImagesServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesServise.swift; sourceTree = "<group>"; };
@@ -191,8 +253,8 @@
 		CF3C4F0021F63E3000257AA7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CF3C4EFA21F6333400257AA7 /* ProfileViewController.swift */,
-				CF3C4EFB21F6333400257AA7 /* ProfileViewController.xib */,
+				CF40F95E21FCBDD800180F36 /* ProfileViewController.swift */,
+				CF40F95F21FCBDD800180F36 /* ProfileViewController.xib */,
 				CFAA719A21F642FF0089F40D /* ProfileAvatarCell.swift */,
 				CFAA719B21F642FF0089F40D /* ProfileAvatarCell.xib */,
 				CF3C4F0521F63E6E00257AA7 /* ProfileNameCell.swift */,
@@ -211,6 +273,35 @@
 				CF40F93B21FC847500180F36 /* ViewContainer.swift */,
 			);
 			path = ViewContainer;
+			sourceTree = "<group>";
+		};
+		CF40F96421FD80C500180F36 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CF40F96521FD80F000180F36 /* Memory */,
+				CF40F96621FD81EC00180F36 /* CoreData */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		CF40F96521FD80F000180F36 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4FE21F4F43B008E9EE6 /* MemoryProfileStorage.swift */,
+				CFF5818021FB7A470003BAC6 /* MemoryVenuesStorage.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		CF40F96621FD81EC00180F36 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A8221FDFC47009D31DB /* DataProvider */,
+				CF9D1A6021FDA62B009D31DB /* Model */,
+				CF9D1A5321FD9D18009D31DB /* CoreDataStack */,
+				CF9D1A5421FD9D31009D31DB /* VenueList */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		CF7CB49421F35B72008E9EE6 = {
@@ -237,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				CF7CB4C221F35C31008E9EE6 /* Application */,
+				CF9D1A5721FD9F21009D31DB /* DTO */,
 				CF7CB4F321F4BD0E008E9EE6 /* Services */,
 				CF7CB4C121F35C04008E9EE6 /* Resources */,
 				CF7CB4C021F35BF9008E9EE6 /* SupportingFiles */,
@@ -292,6 +384,12 @@
 		CF7CB4C321F35C31008E9EE6 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				CF40F94721FC946700180F36 /* FavoritesViewControllerFactory.swift */,
+				CF9D1A8A21FE02E2009D31DB /* ViewController */,
+				CF40F94D21FC950B00180F36 /* FavoritesView.swift */,
+				CF40F94F21FC951C00180F36 /* FavoritesPresenter.swift */,
+				CF40F95121FC952800180F36 /* FavoritesInteractor.swift */,
+				CF40F95A21FCB6DB00180F36 /* VenueListStorage.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -315,7 +413,7 @@
 				CFD4AD6921F8DE2B006238EE /* MapView.swift */,
 				CFD4AD6B21F8DE4C006238EE /* MapPresenter.swift */,
 				CFD4AD6D21F8DE6E006238EE /* MapInteractor.swift */,
-				CFF5818021FB7A470003BAC6 /* MemoryVenuesStorage.swift */,
+				CF9D1A5121FD9CDD009D31DB /* VenuesStorage.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -324,11 +422,11 @@
 			isa = PBXGroup;
 			children = (
 				CF40F94321FC8B7000180F36 /* ProfileViewControllerFactory.swift */,
+				CF40F96221FCC0D200180F36 /* ProfileRouter.swift */,
 				CF3C4F0021F63E3000257AA7 /* ViewController */,
 				CF3C4EFE21F63E0900257AA7 /* ProfileView.swift */,
 				CF7CB4EF21F4B2D1008E9EE6 /* ProfilePresenter.swift */,
 				CF7CB4F121F4B304008E9EE6 /* ProfileInteractor.swift */,
-				CF7CB4FE21F4F43B008E9EE6 /* MemoryProfileStorage.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -354,6 +452,7 @@
 		CF7CB4D621F3685D008E9EE6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CF9D1A8521FDFC8B009D31DB /* DataProvider */,
 				CF40F93A21FC845E00180F36 /* ViewContainer */,
 				CFAA71A921F79A2F0089F40D /* Image */,
 				CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */,
@@ -361,6 +460,7 @@
 				CFF5818A21FC4A110003BAC6 /* UIViewController+Child.swift */,
 				CFF5819821FC67080003BAC6 /* UIView+Nib.swift */,
 				CF40F94121FC894C00180F36 /* ViewControllerFactory.swift */,
+				CF9D1A8F21FE0511009D31DB /* UITableView+Cells.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -368,10 +468,11 @@
 		CF7CB4F321F4BD0E008E9EE6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CFD4AD7521F8E40B006238EE /* Location */,
-				CFAA719E21F659F10089F40D /* Images */,
 				CF7CB4F521F4BD36008E9EE6 /* Authorization */,
 				CF7CB4F421F4BD2E008E9EE6 /* FoursquareApi */,
+				CFD4AD7521F8E40B006238EE /* Location */,
+				CFAA719E21F659F10089F40D /* Images */,
+				CF40F96421FD80C500180F36 /* Storage */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -382,10 +483,10 @@
 				CF7CB4F621F4BD69008E9EE6 /* FoursquareApi.swift */,
 				CF7CB50221F50081008E9EE6 /* FoursquareApi+Profile.swift */,
 				CFD4AD7821FA3F48006238EE /* FoursquareApi+SearchVenues.swift */,
+				CF40F95621FC9B3C00180F36 /* FoursquareApi+Favorites.swift */,
 				CF7CB4F821F4CF79008E9EE6 /* FoursquareApi+Response.swift */,
 				CF7CB4FC21F4E4AD008E9EE6 /* FoursquareApiParser.swift */,
 				CF7CB50421F50EF4008E9EE6 /* AuthorizationErrorHandler.swift */,
-				CFD4AD6421F8D300006238EE /* FoursquareImageIdentifier.swift */,
 			);
 			path = FoursquareApi;
 			sourceTree = "<group>";
@@ -398,6 +499,94 @@
 				CF7CB4CC21F35C31008E9EE6 /* UserDefaultsAuthorizationStorage.swift */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		CF9D1A5321FD9D18009D31DB /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				CF40F96721FD820400180F36 /* CoreDataStack.swift */,
+			);
+			path = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		CF9D1A5421FD9D31009D31DB /* VenueList */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A5521FD9D46009D31DB /* CoreDataVenueListStorage.swift */,
+			);
+			path = VenueList;
+			sourceTree = "<group>";
+		};
+		CF9D1A5721FD9F21009D31DB /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A5E21FD9FE1009D31DB /* Profile.swift */,
+				CFD4AD6421F8D300006238EE /* FoursquareImageIdentifier.swift */,
+				CF9D1A5821FD9F4E009D31DB /* Venue.swift */,
+				CF9D1A5A21FD9F67009D31DB /* Location.swift */,
+				CF9D1A5C21FD9F92009D31DB /* Category.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CF9D1A6021FDA62B009D31DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A4E21FD99E8009D31DB /* FoursquareKurenkov.xcdatamodeld */,
+				CF9D1A6121FDA72C009D31DB /* Human */,
+				CF9D1A6221FDA73D009D31DB /* Machine */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF9D1A6121FDA72C009D31DB /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A6321FDA777009D31DB /* CategoryManagedObject.swift */,
+				CF9D1A6521FDA777009D31DB /* LocationManagedObject.swift */,
+				CF9D1A6621FDA778009D31DB /* VenueListItemManagedObject.swift */,
+				CF9D1A6421FDA777009D31DB /* VenueManagedObject.swift */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		CF9D1A6221FDA73D009D31DB /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A6C21FDA77F009D31DB /* _CategoryManagedObject.swift */,
+				CF9D1A6B21FDA77F009D31DB /* _LocationManagedObject.swift */,
+				CF9D1A6D21FDA780009D31DB /* _VenueListItemManagedObject.swift */,
+				CF9D1A6E21FDA780009D31DB /* _VenueManagedObject.swift */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
+		CF9D1A8221FDFC47009D31DB /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A8321FDFC52009D31DB /* ResultsControllerDataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		CF9D1A8521FDFC8B009D31DB /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				CF9D1A8021FDDE09009D31DB /* DataProvider.swift */,
+				CF9D1A8621FDFC9B009D31DB /* DataProviderProxy.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		CF9D1A8A21FE02E2009D31DB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF40F94921FC949200180F36 /* FavoritesViewController.swift */,
+				CF40F94A21FC949200180F36 /* FavoritesViewController.xib */,
+				CF9D1A8B21FE030E009D31DB /* FavoriteCell.swift */,
+				CF9D1A8C21FE030E009D31DB /* FavoriteCell.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CFAA719E21F659F10089F40D /* Images */ = {
@@ -554,18 +743,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF40F96121FCBDD800180F36 /* ProfileViewController.xib in Resources */,
 				CF3C4F0821F63E6E00257AA7 /* ProfileNameCell.xib in Resources */,
 				CF7CB4E421F4A6E8008E9EE6 /* Localizable.strings in Resources */,
 				CF7CB4DE21F491C2008E9EE6 /* AuthorizationViewController.xib in Resources */,
 				CFF5819D21FC6A2F0003BAC6 /* VenueDescriptionView.xib in Resources */,
 				CFD4AD7221F8DF4D006238EE /* MapViewController.xib in Resources */,
 				CF7CB4AB21F35B7A008E9EE6 /* LaunchScreen.storyboard in Resources */,
+				CF40F94C21FC949200180F36 /* FavoritesViewController.xib in Resources */,
 				CFF5819721FC60250003BAC6 /* PlaceholderView.xib in Resources */,
-				CF3C4EFD21F6333400257AA7 /* ProfileViewController.xib in Resources */,
 				CFAA719D21F642FF0089F40D /* ProfileAvatarCell.xib in Resources */,
 				CF3C4F0C21F63E8400257AA7 /* ProfileBioCell.xib in Resources */,
 				CFD4AD6721F8DD23006238EE /* Assets.xcassets in Resources */,
 				CF3C4F1021F6407B00257AA7 /* ProfileLogoutCell.xib in Resources */,
+				CF9D1A8E21FE030E009D31DB /* FavoriteCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,11 +797,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSOAuth/FSOAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSOAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -644,28 +837,49 @@
 				CFAA71AB21F79A3F0089F40D /* ImageView.swift in Sources */,
 				CF7CB4FD21F4E4AD008E9EE6 /* FoursquareApiParser.swift in Sources */,
 				CF7CB4E621F4AB54008E9EE6 /* AuthorizationPresenter.swift in Sources */,
+				CF9D1A7C21FDAC19009D31DB /* _VenueManagedObject.swift in Sources */,
 				CF40F93C21FC847500180F36 /* ViewContainer.swift in Sources */,
+				CF9D1A7A21FDAC19009D31DB /* _LocationManagedObject.swift in Sources */,
 				CFAA71A421F6EB520089F40D /* MemoryImagesCache.swift in Sources */,
 				CFD4AD7721F8E429006238EE /* LocationService.swift in Sources */,
 				CF40F93E21FC87AC00180F36 /* VenueDescriptionFactory.swift in Sources */,
+				CF40F95221FC952800180F36 /* FavoritesInteractor.swift in Sources */,
+				CF9D1A5621FD9D46009D31DB /* CoreDataVenueListStorage.swift in Sources */,
+				CF9D1A5221FD9CDD009D31DB /* VenuesStorage.swift in Sources */,
 				CF7CB50321F50081008E9EE6 /* FoursquareApi+Profile.swift in Sources */,
 				CF7CB4D021F35C32008E9EE6 /* AuthorizationService.swift in Sources */,
+				CF40F94821FC946700180F36 /* FavoritesViewControllerFactory.swift in Sources */,
+				CF9D1A7B21FDAC19009D31DB /* _VenueListItemManagedObject.swift in Sources */,
 				CFD4AD6321F7AE40006238EE /* ImageIdentifier.swift in Sources */,
 				CFD4AD6A21F8DE2B006238EE /* MapView.swift in Sources */,
 				CF7CB4F221F4B304008E9EE6 /* ProfileInteractor.swift in Sources */,
+				CF9D1A8421FDFC52009D31DB /* ResultsControllerDataProvider.swift in Sources */,
+				CF9D1A5F21FD9FE1009D31DB /* Profile.swift in Sources */,
 				CFAA71AD21F79A610089F40D /* ImagePresenter.swift in Sources */,
 				CF7CB4CF21F35C32008E9EE6 /* LaunchRouter.swift in Sources */,
 				CF3C4F0F21F6407B00257AA7 /* ProfileLogoutCell.swift in Sources */,
 				CF7CB50521F50EF4008E9EE6 /* AuthorizationErrorHandler.swift in Sources */,
 				CF7CB4DD21F491C2008E9EE6 /* AuthorizationViewController.swift in Sources */,
+				CF40F95721FC9B3C00180F36 /* FoursquareApi+Favorites.swift in Sources */,
+				CF40F96321FCC0D200180F36 /* ProfileRouter.swift in Sources */,
 				CFF5817F21FB78BF0003BAC6 /* MapRouter.swift in Sources */,
+				CF9D1A5021FD99E8009D31DB /* FoursquareKurenkov.xcdatamodeld in Sources */,
 				CF40F94421FC8B7000180F36 /* ProfileViewControllerFactory.swift in Sources */,
 				CFF5818B21FC4A110003BAC6 /* UIViewController+Child.swift in Sources */,
 				CF40F94221FC894C00180F36 /* ViewControllerFactory.swift in Sources */,
+				CF9D1A5921FD9F4E009D31DB /* Venue.swift in Sources */,
 				CF7CB4A121F35B73008E9EE6 /* AppDelegate.swift in Sources */,
+				CF40F94B21FC949200180F36 /* FavoritesViewController.swift in Sources */,
+				CF9D1A8D21FE030E009D31DB /* FavoriteCell.swift in Sources */,
+				CF9D1A5B21FD9F67009D31DB /* Location.swift in Sources */,
+				CF9D1A8721FDFC9B009D31DB /* DataProviderProxy.swift in Sources */,
+				CF9D1A9021FE0511009D31DB /* UITableView+Cells.swift in Sources */,
 				CF7CB4FF21F4F43B008E9EE6 /* MemoryProfileStorage.swift in Sources */,
+				CF40F94E21FC950B00180F36 /* FavoritesView.swift in Sources */,
 				CF7CB4D121F35C32008E9EE6 /* UserDefaultsAuthorizationStorage.swift in Sources */,
+				CF9D1A8121FDDE09009D31DB /* DataProvider.swift in Sources */,
 				CFAA719C21F642FF0089F40D /* ProfileAvatarCell.swift in Sources */,
+				CF9D1A7D21FDAC1F009D31DB /* LocationManagedObject.swift in Sources */,
 				CF40F94621FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift in Sources */,
 				CF7CB4F921F4CF79008E9EE6 /* FoursquareApi+Response.swift in Sources */,
 				CF3C4F0B21F63E8400257AA7 /* ProfileBioCell.swift in Sources */,
@@ -673,19 +887,27 @@
 				CF7CB50721F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift in Sources */,
 				CF3C4F0721F63E6E00257AA7 /* ProfileNameCell.swift in Sources */,
 				CF7CB4D821F36870008E9EE6 /* WeakBox.swift in Sources */,
+				CF40F95B21FCB6DB00180F36 /* VenueListStorage.swift in Sources */,
+				CF40F96021FCBDD800180F36 /* ProfileViewController.swift in Sources */,
 				CFF5819521FC601B0003BAC6 /* PlaceholderView.swift in Sources */,
 				CFF5818121FB7A470003BAC6 /* MemoryVenuesStorage.swift in Sources */,
-				CF3C4EFC21F6333400257AA7 /* ProfileViewController.swift in Sources */,
 				CFD4AD7121F8DF4D006238EE /* MapViewController.swift in Sources */,
 				CFD4AD6E21F8DE6E006238EE /* MapInteractor.swift in Sources */,
 				CF7CB4F021F4B2D1008E9EE6 /* ProfilePresenter.swift in Sources */,
 				CF3C4EFF21F63E0900257AA7 /* ProfileView.swift in Sources */,
 				CFAA71A021F65A320089F40D /* ImagesServise.swift in Sources */,
+				CF40F96821FD820400180F36 /* CoreDataStack.swift in Sources */,
 				CFAA71A621F6EB810089F40D /* DiskImagesCache.swift in Sources */,
+				CF9D1A7F21FDAC1F009D31DB /* VenueManagedObject.swift in Sources */,
 				CFAA71B021F79BB80089F40D /* ImageViewConfigurator.swift in Sources */,
+				CF9D1A7321FDAA7F009D31DB /* CategoryManagedObject.swift in Sources */,
+				CF9D1A7921FDAC19009D31DB /* _CategoryManagedObject.swift in Sources */,
 				CFD4AD7921FA3F48006238EE /* FoursquareApi+SearchVenues.swift in Sources */,
 				CFF5819921FC67080003BAC6 /* UIView+Nib.swift in Sources */,
+				CF40F95021FC951C00180F36 /* FavoritesPresenter.swift in Sources */,
+				CF9D1A5D21FD9F92009D31DB /* Category.swift in Sources */,
 				CF7CB4F721F4BD69008E9EE6 /* FoursquareApi.swift in Sources */,
+				CF9D1A7E21FDAC1F009D31DB /* VenueListItemManagedObject.swift in Sources */,
 				CF40F94021FC88A300180F36 /* MapViewControllerFactory.swift in Sources */,
 				CFD4AD6521F8D300006238EE /* FoursquareImageIdentifier.swift in Sources */,
 			);
@@ -950,6 +1172,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF9D1A4E21FD99E8009D31DB /* FoursquareKurenkov.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF9D1A4F21FD99E8009D31DB /* FoursquareKurenkov.xcdatamodel */,
+			);
+			currentVersion = CF9D1A4F21FD99E8009D31DB /* FoursquareKurenkov.xcdatamodel */;
+			path = FoursquareKurenkov.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CF7CB49521F35B72008E9EE6 /* Project object */;
 }

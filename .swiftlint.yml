@@ -1,2 +1,3 @@
 excluded: 
   - Pods
+  - FoursquareKurenkov/Services/Storage/CoreData/Model/Machine 
