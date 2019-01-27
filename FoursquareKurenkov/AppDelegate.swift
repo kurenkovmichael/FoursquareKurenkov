@@ -48,10 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func createServices() {
+        let authStorage: AuthorizationServiceStorage = UIDevice.isSimulator ?
+            UserDefaultsAuthorizationStorage() : KeychainAuthorizationStorage()
         authorizationService = AuthorizationService(clientId: FoursquareConfig.clientId,
                                                     clientSecret: FoursquareConfig.clientSecret,
                                                     callbackURL: FoursquareConfig.callbackURL,
-                                                    storage: UserDefaultsAuthorizationStorage())
+                                                    storage: authStorage)
 
         let authorizationErrorHandler = AuthorizationErrorHandler(authorizationService: authorizationService)
         api = FoursquareApi(authTokenProvider: authorizationService,

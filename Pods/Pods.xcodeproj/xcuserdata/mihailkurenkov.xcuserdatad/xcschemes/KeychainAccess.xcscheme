@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7C75425217A412DEB95803C505C05AAC"
-               BuildableName = "Pods_FoursquareKurenkov.framework"
-               BlueprintName = "Pods-FoursquareKurenkov"
+               BlueprintIdentifier = "8905DB6521F8FDC34752B69DEE3FDEB7"
+               BuildableName = "KeychainAccess.framework"
+               BlueprintName = "KeychainAccess"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7C75425217A412DEB95803C505C05AAC"
-            BuildableName = "Pods_FoursquareKurenkov.framework"
-            BlueprintName = "Pods-FoursquareKurenkov"
+            BlueprintIdentifier = "8905DB6521F8FDC34752B69DEE3FDEB7"
+            BuildableName = "KeychainAccess.framework"
+            BlueprintName = "KeychainAccess"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

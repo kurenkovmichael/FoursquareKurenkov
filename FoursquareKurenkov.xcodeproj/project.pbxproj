@@ -39,7 +39,7 @@
 		CF7CB4CE21F35C32008E9EE6 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4C521F35C31008E9EE6 /* LaunchInteractor.swift */; };
 		CF7CB4CF21F35C32008E9EE6 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4C621F35C31008E9EE6 /* LaunchRouter.swift */; };
 		CF7CB4D021F35C32008E9EE6 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4CB21F35C31008E9EE6 /* AuthorizationService.swift */; };
-		CF7CB4D121F35C32008E9EE6 /* UserDefaultsAuthorizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4CC21F35C31008E9EE6 /* UserDefaultsAuthorizationStorage.swift */; };
+		CF7CB4D121F35C32008E9EE6 /* KeychainAuthorizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4CC21F35C31008E9EE6 /* KeychainAuthorizationStorage.swift */; };
 		CF7CB4D821F36870008E9EE6 /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4D721F36870008E9EE6 /* WeakBox.swift */; };
 		CF7CB4DD21F491C2008E9EE6 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */; };
 		CF7CB4DE21F491C2008E9EE6 /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7CB4DC21F491C2008E9EE6 /* AuthorizationViewController.xib */; };
@@ -87,6 +87,8 @@
 		CFAA71AB21F79A3F0089F40D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71AA21F79A3F0089F40D /* ImageView.swift */; };
 		CFAA71AD21F79A610089F40D /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71AC21F79A610089F40D /* ImagePresenter.swift */; };
 		CFAA71B021F79BB80089F40D /* ImageViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71AF21F79BB80089F40D /* ImageViewConfigurator.swift */; };
+		CFBE36A621FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36A521FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift */; };
+		CFBE36A821FE7389005F6B66 /* UIDevice+Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36A721FE7389005F6B66 /* UIDevice+Simulator.swift */; };
 		CFC85FEC21FE4DB000DEDD65 /* UIView+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC85FEB21FE4DB000DEDD65 /* UIView+Setup.swift */; };
 		CFC85FF321FE5C0000DEDD65 /* PlaceholderContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC85FF221FE5C0000DEDD65 /* PlaceholderContainerView.swift */; };
 		CFD4AD6321F7AE40006238EE /* ImageIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */; };
@@ -159,7 +161,7 @@
 		CF7CB4C521F35C31008E9EE6 /* LaunchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		CF7CB4C621F35C31008E9EE6 /* LaunchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		CF7CB4CB21F35C31008E9EE6 /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
-		CF7CB4CC21F35C31008E9EE6 /* UserDefaultsAuthorizationStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsAuthorizationStorage.swift; sourceTree = "<group>"; };
+		CF7CB4CC21F35C31008E9EE6 /* KeychainAuthorizationStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainAuthorizationStorage.swift; sourceTree = "<group>"; };
 		CF7CB4D221F35CB3008E9EE6 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF7CB4D721F36870008E9EE6 /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
 		CF7CB4DB21F491C2008E9EE6 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,8 @@
 		CFAA71AA21F79A3F0089F40D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CFAA71AC21F79A610089F40D /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
 		CFAA71AF21F79BB80089F40D /* ImageViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewConfigurator.swift; sourceTree = "<group>"; };
+		CFBE36A521FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAuthorizationStorage.swift; sourceTree = "<group>"; };
+		CFBE36A721FE7389005F6B66 /* UIDevice+Simulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Simulator.swift"; sourceTree = "<group>"; };
 		CFC85FEB21FE4DB000DEDD65 /* UIView+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setup.swift"; sourceTree = "<group>"; };
 		CFC85FF221FE5C0000DEDD65 /* PlaceholderContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderContainerView.swift; sourceTree = "<group>"; };
 		CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIdentifier.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 		CF40F96421FD80C500180F36 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				CFBE36A421FE7140005F6B66 /* Keychain */,
 				CFE33A2321FE6CDC00D891EE /* UserDefaults */,
 				CF40F96521FD80F000180F36 /* Memory */,
 				CF40F96621FD81EC00180F36 /* CoreData */,
@@ -457,6 +462,7 @@
 				CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */,
 				CF7CB4D721F36870008E9EE6 /* WeakBox.swift */,
 				CF40F94121FC894C00180F36 /* ViewControllerFactory.swift */,
+				CFBE36A721FE7389005F6B66 /* UIDevice+Simulator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -492,7 +498,6 @@
 			children = (
 				CF7CB4CB21F35C31008E9EE6 /* AuthorizationService.swift */,
 				CF7CB50621F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift */,
-				CF7CB4CC21F35C31008E9EE6 /* UserDefaultsAuthorizationStorage.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -631,6 +636,14 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		CFBE36A421FE7140005F6B66 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				CF7CB4CC21F35C31008E9EE6 /* KeychainAuthorizationStorage.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		CFC85FF021FE5AD100DEDD65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				CF7CB4FE21F4F43B008E9EE6 /* UserDefaultsProfileStorage.swift */,
+				CFBE36A521FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -845,12 +859,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoursquareKurenkov/Pods-FoursquareKurenkov-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSOAuth/FSOAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSOAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -926,13 +942,14 @@
 				CF9D1A9021FE0511009D31DB /* UITableView+Cells.swift in Sources */,
 				CF7CB4FF21F4F43B008E9EE6 /* UserDefaultsProfileStorage.swift in Sources */,
 				CF40F94E21FC950B00180F36 /* FavoritesView.swift in Sources */,
-				CF7CB4D121F35C32008E9EE6 /* UserDefaultsAuthorizationStorage.swift in Sources */,
+				CF7CB4D121F35C32008E9EE6 /* KeychainAuthorizationStorage.swift in Sources */,
 				CF9D1A8121FDDE09009D31DB /* DataProvider.swift in Sources */,
 				CFAA719C21F642FF0089F40D /* ProfileAvatarCell.swift in Sources */,
 				CF9D1A7D21FDAC1F009D31DB /* LocationManagedObject.swift in Sources */,
 				CF40F94621FC8BFB00180F36 /* AuthorizationViewControllerFactory.swift in Sources */,
 				CF7CB4F921F4CF79008E9EE6 /* FoursquareApi+Response.swift in Sources */,
 				CF3C4F0B21F63E8400257AA7 /* ProfileBioCell.swift in Sources */,
+				CFBE36A621FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift in Sources */,
 				CFD4AD6C21F8DE4C006238EE /* MapPresenter.swift in Sources */,
 				CF7CB50721F511A6008E9EE6 /* AuthorizationService+AuthTokenProvider.swift in Sources */,
 				CF3C4F0721F63E6E00257AA7 /* ProfileNameCell.swift in Sources */,
@@ -959,6 +976,7 @@
 				CF40F95021FC951C00180F36 /* FavoritesPresenter.swift in Sources */,
 				CF9D1A5D21FD9F92009D31DB /* Category.swift in Sources */,
 				CF7CB4F721F4BD69008E9EE6 /* FoursquareApi.swift in Sources */,
+				CFBE36A821FE7389005F6B66 /* UIDevice+Simulator.swift in Sources */,
 				CF9D1A7E21FDAC1F009D31DB /* VenueListItemManagedObject.swift in Sources */,
 				CF40F94021FC88A300180F36 /* MapViewControllerFactory.swift in Sources */,
 				CFD4AD6521F8D300006238EE /* FoursquareImageIdentifier.swift in Sources */,
