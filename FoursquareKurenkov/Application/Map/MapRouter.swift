@@ -34,7 +34,7 @@ class MapRouter {
         container.show(view: view)
     }
 
-    func hideView() {
+    func hidePlaceholder() {
         container.hideView()
     }
 

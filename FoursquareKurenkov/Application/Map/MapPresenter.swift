@@ -28,13 +28,13 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
     }
 
     func didTriggeredSelectAnnotationEvent(_ annotation: Annotation) {
-        resetHideViewTimer()
+        resetHidePlaceholderTimer()
         router.showVenueDescription(with: annotation.identifier)
     }
 
     func didTriggeredDeselectAnnotationEvent(_ annotation: Annotation) {
-        resetHideViewTimer()
-        router.hideView()
+        resetHidePlaceholderTimer()
+        router.hidePlaceholder()
     }
 
     // MARK: - MapInteractorOutput
@@ -42,31 +42,39 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
     private var shownAnnotations: [Annotation] = []
 
     func startSearchVenuesForCurrentLocation() {
-        view?.showRefreshActivityIndicator()
+        DispatchQueue.main.async {
+            self.view?.showRefreshActivityIndicator()
+        }
     }
 
     func startSearchVenuesForArbitraryLocation() {
-        view?.showRedoSearchActivityIndicator()
+        DispatchQueue.main.async {
+            self.view?.showRedoSearchActivityIndicator()
+        }
     }
 
     func searchVenuesCompletedSuccessfully(_ venues: [Venue]) {
-        view?.hideRefreshActivityIndicator()
-        view?.hideRedoSearchActivityIndicator()
-        view?.hide(annotations: shownAnnotations)
-        shownAnnotations = conver(venues: venues)
-        if shownAnnotations.count > 0 {
-            view?.show(annotations: shownAnnotations)
-        } else {
-            router.showEmptyPlaceholder()
-            scheduleHideViewTimer()
+        DispatchQueue.main.async {
+            self.view?.hideRefreshActivityIndicator()
+            self.view?.hideRedoSearchActivityIndicator()
+            self.view?.hide(annotations: self.shownAnnotations)
+            self.shownAnnotations = self.conver(venues: venues)
+            if self.shownAnnotations.count > 0 {
+                self.view?.show(annotations: self.shownAnnotations)
+            } else {
+                self.router.showEmptyPlaceholder()
+                self.scheduleHidePlaceholderTimer()
+            }
         }
     }
 
     func searchVenuesFailed(withError error: Error?) {
-        view?.hideRefreshActivityIndicator()
-        view?.hideRedoSearchActivityIndicator()
-        router.showPlaceholder(withError: error)
-        scheduleHideViewTimer()
+        DispatchQueue.main.async {
+            self.view?.hideRefreshActivityIndicator()
+            self.view?.hideRedoSearchActivityIndicator()
+            self.router.showPlaceholder(withError: error)
+            self.scheduleHidePlaceholderTimer()
+        }
     }
 
     // MARK: - Private
@@ -78,25 +86,25 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
             }
             let category = venue.categories?.first?.name
             return Annotation(identifier: venue.identifier,
-                              latitude: location.lat,
-                              longitude: location.lng,
+                              latitude: location.latitude,
+                              longitude: location.longitude,
                               title: venue.name,
                               subtitle: category)
         }
     }
 
-    private var hideViewTimer: Timer?
+    private var hidePlaceholderTimer: Timer?
 
-    func scheduleHideViewTimer() {
-        hideViewTimer?.invalidate()
-        hideViewTimer = .scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
-            self.router.hideView()
-            self.resetHideViewTimer()
+    func scheduleHidePlaceholderTimer() {
+        hidePlaceholderTimer?.invalidate()
+        hidePlaceholderTimer = .scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
+            self.router.hidePlaceholder()
+            self.resetHidePlaceholderTimer()
         }
     }
 
-    func resetHideViewTimer() {
-        self.hideViewTimer?.invalidate()
-        self.hideViewTimer = nil
+    func resetHidePlaceholderTimer() {
+        self.hidePlaceholderTimer?.invalidate()
+        self.hidePlaceholderTimer = nil
     }
 }
