@@ -38,7 +38,8 @@ class AuthorizationService {
 
     public enum State {
         case autorized
-        case authorization
+        case uaerAuthorization
+        case requestAccessToken
         case unauthorized(error: AuthorizationError?)
     }
 
@@ -49,10 +50,11 @@ class AuthorizationService {
     }
 
     func authorize() {
-        set(state: .authorization)
         if let acessCode = storage.restoreAccessCode() {
+            set(state: .requestAccessToken)
             requestAccessToken(withAccessCode: acessCode)
         } else {
+            set(state: .uaerAuthorization)
             authorizeUser()
         }
     }

@@ -21,7 +21,7 @@ class AuthorizationPresenter: AuthorizationViewOutput, AuthorizationServiceObser
 
     func updateAuthorization(_ state: AuthorizationService.State) {
         switch authorizationService.state {
-        case .authorization:
+        case .requestAccessToken:
             view?.showActivityIndicator()
         default:
             view?.hideActivityIndicator()
