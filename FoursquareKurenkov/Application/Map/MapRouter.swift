@@ -4,7 +4,6 @@ class MapRouter {
 
     private let container: ViewContainer
     private let storage: VenuesStorage
-    private let venueViewFactory = VenueDescriptionFactory()
 
     init(container: ViewContainer, storage: VenuesStorage) {
         self.container = container
@@ -13,7 +12,7 @@ class MapRouter {
 
     func showVenueDescription(with identifier: String) {
         if let venue = storage.restore(venueWith: identifier),
-           let view = venueViewFactory.venueDescriptionView(with: venue) {
+           let view = VenueDescriptionView.venueDescriptionView(with: venue) {
             container.show(view: view)
         }
     }
@@ -26,15 +25,16 @@ class MapRouter {
         container.show(view: view)
     }
 
-    func showPlaceholder(withError error: Error?) {
+    func showPoppup(withError error: Error?) {
         guard let view = PlaceholderView.fromDefaultNib() else {
             return
         }
-        view.configure(subtitle: "Error: \(String(describing: error?.localizedDescription))")
+        view.configure(title: NSLocalizedString("error.default.title", comment: ""),
+                       subtitle: NSLocalizedString("error.default.message", comment: ""))
         container.show(view: view)
     }
 
-    func hidePlaceholder() {
+    func hidePoppup() {
         container.hideView()
     }
 

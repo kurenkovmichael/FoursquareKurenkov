@@ -1,8 +1,8 @@
 import Foundation
 
-class VenueDescriptionFactory {
+extension VenueDescriptionView {
 
-    func venueDescriptionView(with venue: Venue) -> UIView? {
+    class func venueDescriptionView(with venue: Venue) -> UIView? {
         guard let view = VenueDescriptionView.fromDefaultNib() else {
             return nil
         }

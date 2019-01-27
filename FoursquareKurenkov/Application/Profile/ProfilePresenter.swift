@@ -4,10 +4,12 @@ class ProfilePresenter: ProfileInteractorOutput, ProfileViewOutput {
 
     private weak var view: ProfileViewInput?
     private let interactor: ProfileInteractorInput
+    private let router: ErrorPoppupRouter
 
-    init(view: ProfileViewInput, interactor: ProfileInteractorInput) {
+    init(view: ProfileViewInput, interactor: ProfileInteractorInput, router: ErrorPoppupRouter) {
         self.view = view
         self.interactor = interactor
+        self.router = router
     }
 
     // MARK: - ProfileViewOutput
@@ -31,8 +33,9 @@ class ProfilePresenter: ProfileInteractorOutput, ProfileViewOutput {
             if let profile = profile {
                 let data = self.profileData(from: profile)
                 self.view?.show(data: data)
+                self.router.hidePoppup()
             } else {
-                self.view?.showEmptyPlaceholder()
+                self.view?.show(data: [])
                 self.interactor.reloadProfile()
             }
         }
@@ -41,6 +44,7 @@ class ProfilePresenter: ProfileInteractorOutput, ProfileViewOutput {
     func startLoadingProfile() {
         DispatchQueue.main.async {
             self.view?.showActivityIndicator()
+            self.router.hidePoppup()
         }
     }
 
@@ -52,10 +56,10 @@ class ProfilePresenter: ProfileInteractorOutput, ProfileViewOutput {
         }
     }
 
-    func profileLoadingFailed(withError error: ProfileError) {
+    func profileLoadingFailed(withError error: Error?) {
         DispatchQueue.main.async {
-            self.view?.showErrorPlaceholder(error)
             self.view?.hideActivityIndicator()
+            self.router.showPoppup(withError: error)
         }
     }
 
@@ -72,7 +76,9 @@ class ProfilePresenter: ProfileInteractorOutput, ProfileViewOutput {
                                  lastName: profile.lastName))
 
         for (type, content) in profile.contact {
-            profileData.append(.contact(type: type, content: content))
+            if let type = contactType(for: type) {
+                profileData.append(.contact(type: type, content: content))
+            }
         }
 
         if let bio = profile.bio, bio.count > 0 {
@@ -83,4 +89,20 @@ class ProfilePresenter: ProfileInteractorOutput, ProfileViewOutput {
 
         return profileData
     }
+
+    private func contactType(for name: String) -> ContactType? {
+        switch name {
+        case "twitter":
+            return .twitter
+        case "facebook":
+            return .facebook
+        case "email":
+            return .email
+        case "phone":
+            return .phone
+        default:
+            return nil
+        }
+    }
+
 }

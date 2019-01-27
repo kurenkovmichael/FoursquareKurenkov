@@ -12,10 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="FoursquareKurenkov" customModuleProvider="target">
             <connections>
-                <outlet property="containerView" destination="0bH-GN-6Gc" id="6Cv-7L-Jjl"/>
                 <outlet property="mapView" destination="PLQ-Dt-Dxo" id="IWn-8a-jl6"/>
-                <outlet property="popoverBackgroundView" destination="LoU-69-dQj" id="Ev4-Yi-tQk"/>
-                <outlet property="popoverContainerBottomConstraint" destination="wD9-a3-l0g" id="b56-YT-2Ek"/>
+                <outlet property="popupContainerView" destination="Pd9-Fo-bRN" id="vz8-Gj-7oU"/>
                 <outlet property="redoSearchActivityIndicatorView" destination="8eZ-xR-DUa" id="tx7-Op-4NM"/>
                 <outlet property="redoSearchButton" destination="0QJ-PK-axN" id="lVe-ZM-4Wp"/>
                 <outlet property="refreshActivityIndicatorView" destination="rSR-Oo-UzP" id="eT6-JJ-b6C"/>
@@ -36,38 +34,10 @@
                 </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-Fo-bRN">
                     <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bH-GN-6Gc">
-                            <rect key="frame" x="16" y="0.0" width="343" height="44"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoU-69-dQj">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="LoU-69-dQj" secondAttribute="trailing" id="7TX-rX-Rnz"/>
-                                <constraint firstAttribute="bottom" secondItem="LoU-69-dQj" secondAttribute="bottom" id="P5Z-zc-HlY"/>
-                                <constraint firstItem="LoU-69-dQj" firstAttribute="leading" secondItem="0bH-GN-6Gc" secondAttribute="leading" id="fyy-56-gCk"/>
-                                <constraint firstItem="LoU-69-dQj" firstAttribute="top" secondItem="0bH-GN-6Gc" secondAttribute="top" id="rir-mp-6S9"/>
-                                <constraint firstAttribute="height" priority="100" id="uLZ-Z7-CXB"/>
-                            </constraints>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="0bH-GN-6Gc" firstAttribute="leading" secondItem="Pd9-Fo-bRN" secondAttribute="leading" constant="16" id="5pi-qY-uMB"/>
-                        <constraint firstAttribute="bottom" secondItem="0bH-GN-6Gc" secondAttribute="bottom" priority="751" constant="-44" id="EPX-Sp-9WG"/>
-                        <constraint firstItem="0bH-GN-6Gc" firstAttribute="top" secondItem="Pd9-Fo-bRN" secondAttribute="top" id="kAm-Hl-FLd"/>
-                        <constraint firstAttribute="bottom" secondItem="0bH-GN-6Gc" secondAttribute="bottom" constant="16" id="wD9-a3-l0g"/>
-                        <constraint firstAttribute="trailing" secondItem="0bH-GN-6Gc" secondAttribute="trailing" constant="16" id="ywr-KJ-Bpb"/>
+                        <constraint firstAttribute="height" priority="100" id="pba-ls-7o5"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="wD9-a3-l0g"/>
-                        </mask>
-                    </variation>
                 </view>
                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZT-zJ-iq2">
                     <rect key="frame" x="311" y="573" width="48" height="48"/>

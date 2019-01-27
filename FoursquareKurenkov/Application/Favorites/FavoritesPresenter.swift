@@ -4,10 +4,12 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
 
     private weak var view: FavoritesViewInput?
     private let interactor: FavoritesInteractorInput
+    private let router: ErrorPoppupRouter
 
-    init(view: FavoritesViewInput, interactor: FavoritesInteractorInput) {
+    init(view: FavoritesViewInput, interactor: FavoritesInteractorInput, router: ErrorPoppupRouter) {
         self.view = view
         self.interactor = interactor
+        self.router = router
     }
 
     // MARK: - FavoritesViewOutput
@@ -51,10 +53,10 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
         view?.hideLoadMoreActivityIndicator()
     }
 
-    func favoritesLoadingFailed(withError error: FavoritesError) {
+    func favoritesLoadingFailed(withError error: Error?) {
         view?.hideRefrashActivityIndicator()
         view?.hideLoadMoreActivityIndicator()
-        // Show error placeholder
+        router.showPoppup(withError: error)
     }
 
 }

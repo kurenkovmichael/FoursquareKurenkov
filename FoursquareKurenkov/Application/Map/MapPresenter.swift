@@ -28,13 +28,11 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
     }
 
     func didTriggeredSelectAnnotationEvent(_ annotation: Annotation) {
-        resetHidePlaceholderTimer()
         router.showVenueDescription(with: annotation.identifier)
     }
 
     func didTriggeredDeselectAnnotationEvent(_ annotation: Annotation) {
-        resetHidePlaceholderTimer()
-        router.hidePlaceholder()
+        router.hidePoppup()
     }
 
     // MARK: - MapInteractorOutput
@@ -63,7 +61,6 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
                 self.view?.show(annotations: self.shownAnnotations)
             } else {
                 self.router.showEmptyPlaceholder()
-                self.scheduleHidePlaceholderTimer()
             }
         }
     }
@@ -72,8 +69,7 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
         DispatchQueue.main.async {
             self.view?.hideRefreshActivityIndicator()
             self.view?.hideRedoSearchActivityIndicator()
-            self.router.showPlaceholder(withError: error)
-            self.scheduleHidePlaceholderTimer()
+            self.router.showPoppup(withError: error)
         }
     }
 
@@ -93,18 +89,4 @@ class MapPresenter: MapInteractorOutput, MapViewOutput {
         }
     }
 
-    private var hidePlaceholderTimer: Timer?
-
-    func scheduleHidePlaceholderTimer() {
-        hidePlaceholderTimer?.invalidate()
-        hidePlaceholderTimer = .scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
-            self.router.hidePlaceholder()
-            self.resetHidePlaceholderTimer()
-        }
-    }
-
-    func resetHidePlaceholderTimer() {
-        self.hidePlaceholderTimer?.invalidate()
-        self.hidePlaceholderTimer = nil
-    }
 }

@@ -2,7 +2,13 @@ import UIKit
 
 extension UITableView {
 
-    func registerCell<T>(_ type: T.Type)
+    func registerClassForCell<T>(_ type: T.Type)
+        where T: UITableViewCell {
+            let cellType = String(describing: T.self)
+            register(T.self, forCellReuseIdentifier: cellType)
+    }
+
+    func registerNibForCell<T>(_ type: T.Type)
         where T: UITableViewCell {
             let cellType = String(describing: T.self)
             register(UINib.init(nibName: cellType, bundle: nil), forCellReuseIdentifier: cellType)

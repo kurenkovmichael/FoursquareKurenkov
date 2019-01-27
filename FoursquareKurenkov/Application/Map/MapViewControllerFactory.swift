@@ -19,7 +19,7 @@ class MapViewControllerFactory: ViewControllerFactory {
                                        locationService: locationService,
                                        storage: storage)
 
-        let router = MapRouter(container: ViewContainer(delegate: view), storage: storage)
+        let router = MapRouter(container: ViewContainer(delegate: view.popupView), storage: storage)
         let presenter = MapPresenter(view: view, interactor: interactor, router: router)
         view.output = presenter
         interactor.output = presenter

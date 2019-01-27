@@ -16,7 +16,8 @@ class FavoritesViewControllerFactory: ViewControllerFactory {
         let storage = CoreDataVenueListStorage(name: "Favorites", coreDataStack: coreDataStack)
         let interactor = FavoritesInteractor(api: api, storage: storage)
 
-        let presenter = FavoritesPresenter(view: view, interactor: interactor)
+        let router = ErrorPoppupRouter(container: ViewContainer(delegate: view.popupView))
+        let presenter = FavoritesPresenter(view: view, interactor: interactor, router: router)
         view.output = presenter
         interactor.output = presenter
 

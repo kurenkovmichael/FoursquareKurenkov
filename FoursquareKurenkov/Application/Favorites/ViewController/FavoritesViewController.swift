@@ -8,16 +8,28 @@ class FavoritesViewController: UIViewController,
     var output: FavoritesViewOutput!
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var popupContainerView: UIView!
+
+    let popupView = PopupContainerView()
+    let placeholderView = PlaceholderContainerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.registerCell(FavoriteCell.self)
+        tableView.registerNibForCell(FavoriteCell.self)
 
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self,
                                             action: #selector(handleRefresh(_:)),
                                             for: .valueChanged)
+
+        if let view = PlaceholderView.fromDefaultNib() {
+            view.configure(title: NSLocalizedString("favorites.placeholder.title", comment: ""),
+                           subtitle: NSLocalizedString("favorites.placeholder.message", comment: ""))
+            placeholderView.placeholderView = view
+        }
+        placeholderView.addOn(superview: view)
+        popupView.addOn(superview: popupContainerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +41,6 @@ class FavoritesViewController: UIViewController,
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         output.didTriggeredPulldownEvent()
-//        output.didTriggeredScrolledToEndEvent()
     }
 
     // MARK: - FavoritesViewInput
@@ -59,12 +70,14 @@ class FavoritesViewController: UIViewController,
             }
         }
 
-        dataProvider.didChangeDataBlock = { [weak self] _ in
+        dataProvider.didChangeDataBlock = { [weak self] dataProvider in
             self?.tableView.endUpdates()
+            self?.updatePlaceholder()
         }
 
         if isViewLoaded {
-            self.tableView.reloadData()
+            tableView.reloadData()
+            updatePlaceholder()
         }
     }
 
@@ -104,13 +117,7 @@ class FavoritesViewController: UIViewController,
 
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-        //
-    }
-
-    func tableView(_ tableView: UITableView,
-                   willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-       //
+        // TODO: Need Imolement
     }
 
     private let minOffsetToBottom: CGFloat = 50
@@ -128,4 +135,15 @@ class FavoritesViewController: UIViewController,
 
         lastOffsetToBottom = offsetToBottom
     }
+
+    // MARK: - Private
+
+    private func updatePlaceholder() {
+        if dataProvider?.isEmpty ?? true {
+            placeholderView.show()
+        } else {
+            placeholderView.hide()
+        }
+    }
+
 }

@@ -10,11 +10,7 @@ protocol FavoritesInteractorOutput: class {
     func startReloadingFavorites()
     func startLoadingMoreFavorites()
     func favoritesLoadingCompletedSuccessfully()
-    func favoritesLoadingFailed(withError error: FavoritesError)
-}
-
-enum FavoritesError: Error {
-    case failureLoading(parent: Error?)
+    func favoritesLoadingFailed(withError error: Error?)
 }
 
 class FavoritesInteractor: FavoritesInteractorInput {
@@ -78,7 +74,7 @@ class FavoritesInteractor: FavoritesInteractorInput {
         if success {
             output?.favoritesLoadingCompletedSuccessfully()
         } else {
-            output?.favoritesLoadingFailed(withError: .failureLoading(parent: error))
+            output?.favoritesLoadingFailed(withError: error)
         }
     }
 }

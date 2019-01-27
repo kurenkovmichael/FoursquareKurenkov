@@ -19,10 +19,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="45.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2O-yS-mKG">
-                        <rect key="frame" x="32" y="4" width="256" height="37.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2O-yS-mKG">
+                        <rect key="frame" x="32" y="4" width="256" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,7 +31,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="L2O-yS-mKG" secondAttribute="trailing" constant="32" id="0mv-I4-rs1"/>
                     <constraint firstItem="L2O-yS-mKG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="4kc-b2-V98"/>
-                    <constraint firstAttribute="bottom" secondItem="L2O-yS-mKG" secondAttribute="bottom" constant="4" id="NzQ-qu-DzB"/>
+                    <constraint firstAttribute="bottom" secondItem="L2O-yS-mKG" secondAttribute="bottom" constant="16" id="NzQ-qu-DzB"/>
                     <constraint firstItem="L2O-yS-mKG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="j24-HN-vNP"/>
                 </constraints>
             </tableViewCellContentView>

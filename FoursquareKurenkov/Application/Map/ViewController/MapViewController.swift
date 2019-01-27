@@ -7,18 +7,18 @@ extension Annotation: MKAnnotation {
     }
 }
 
-class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate, ViewContainerDelegate {
+class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate {
 
     var output: MapViewOutput!
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var popoverBackgroundView: UIView!
+    @IBOutlet weak var popupContainerView: UIView!
     @IBOutlet weak var refreshActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var redoSearchActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var redoSearchButton: UIButton!
-    @IBOutlet weak var popoverContainerBottomConstraint: NSLayoutConstraint!
+
+    let popupView = PopupContainerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,27 +26,10 @@ class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate, View
         mapView.userTrackingMode = .follow
         mapView.showsUserLocation = true
 
-        popoverBackgroundView.backgroundColor = .white
-        popoverBackgroundView.layer.masksToBounds = true
-        popoverBackgroundView.layer.cornerRadius = 16
+        refreshButton.setupAsRoundButton(radius: 24)
+        redoSearchButton.setupAsRoundButton(radius: 24)
 
-        containerView.backgroundColor = .clear
-        containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowRadius = 12
-        containerView.layer.shadowOpacity = 0.2
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 6)
-
-        refreshButton.layer.masksToBounds = true
-        refreshButton.layer.cornerRadius = 24
-        refreshButton.layer.borderWidth = 0.5
-        refreshButton.layer.borderColor = UIColor.lightGray.cgColor
-        refreshButton.tintColorDidChange()
-
-        redoSearchButton.layer.masksToBounds = true
-        redoSearchButton.layer.cornerRadius = 24
-        redoSearchButton.layer.borderWidth = 0.5
-        redoSearchButton.layer.borderColor = UIColor.lightGray.cgColor
-        redoSearchButton.tintColorDidChange()
+        popupView.addOn(superview: popupContainerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -91,31 +74,6 @@ class MapViewController: UIViewController, MapViewInput, MKMapViewDelegate, View
         redoSearchButton.isEnabled = true
         redoSearchButton.setImage(UIImage(named: "navigation"), for: .normal)
         redoSearchActivityIndicatorView.stopAnimating()
-    }
-
-    // MARK: - ViewContainerDelegate
-
-    private var childBottomConstraint: NSLayoutConstraint?
-
-    func show(childView child: UIView, completion: (() -> Void)?) {
-        show(view: child, on: self.containerView, addSubview: { (container: UIView, child: UIView) in
-            child.translatesAutoresizingMaskIntoConstraints = false
-            container.addSubview(child)
-            container.topAnchor.constraint(equalTo: child.topAnchor).isActive = true
-            container.leadingAnchor.constraint(equalTo: child.leadingAnchor).isActive = true
-            container.trailingAnchor.constraint(equalTo: child.trailingAnchor).isActive = true
-            self.childBottomConstraint = container.bottomAnchor.constraint(equalTo: child.bottomAnchor)
-        }, animations: {
-            self.childBottomConstraint?.isActive = true
-            self.popoverContainerBottomConstraint.isActive = true
-        }, completion: completion)
-    }
-
-    func hide(childView child: UIView, completion: (() -> Void)?) {
-        hide(view: child, animations: {
-            self.popoverContainerBottomConstraint.isActive = false
-            self.childBottomConstraint?.isActive = false
-        }, completion: completion)
     }
 
     // MARK: - MKMapViewDelegate

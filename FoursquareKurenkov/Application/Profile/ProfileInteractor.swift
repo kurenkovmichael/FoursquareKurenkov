@@ -10,16 +10,12 @@ protocol ProfileInteractorOutput: class {
     func profileRestoreCompleted(_ profile: Profile?)
     func startLoadingProfile()
     func profileLoadingCompletedSuccessfully(_ profile: Profile)
-    func profileLoadingFailed(withError error: ProfileError)
+    func profileLoadingFailed(withError error: Error?)
 }
 
 protocol ProfileStorage {
     func store(profile: Profile)
     func restore() -> Profile?
-}
-
-enum ProfileError: Error {
-    case failureLoading(parent: ApiError?)
 }
 
 class ProfileInteractor: ProfileInteractorInput {
@@ -35,10 +31,6 @@ class ProfileInteractor: ProfileInteractorInput {
         self.authorizationService = authorizationService
         self.api = api
         self.storage = storage
-    }
-
-    var profile: Profile? {
-        return storage.restore()
     }
 
     // MARK: - ProfileInteractorInput
@@ -58,7 +50,7 @@ class ProfileInteractor: ProfileInteractorInput {
                 self.output?.profileLoadingCompletedSuccessfully(profile)
 
             case .fail(let error):
-                self.output?.profileLoadingFailed(withError: .failureLoading(parent: error))
+                self.output?.profileLoadingFailed(withError: error)
             }
         }
     }

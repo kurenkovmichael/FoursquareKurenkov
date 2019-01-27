@@ -22,7 +22,8 @@ class ProfileViewControllerFactory: ViewControllerFactory {
                                            api: api,
                                            storage: MemoryProfileStorage())
 
-        let presenter = ProfilePresenter(view: view, interactor: interactor)
+        let router = ErrorPoppupRouter(container: ViewContainer(delegate: view.popupView))
+        let presenter = ProfilePresenter(view: view, interactor: interactor, router: router)
         view.output = presenter
         interactor.output = presenter
 

@@ -1,33 +1,34 @@
 import UIKit
 
-class ProfileViewController: UITableViewController, ProfileViewInput {
+class ProfileViewController: UIViewController,
+                             UITableViewDataSource,
+                             UITableViewDelegate,
+                             ProfileViewInput {
 
     var imageViewConfigurator: ImageViewConfigurator!
     var output: ProfileViewOutput!
     var data: [ProfileViewData] = []
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var popupContainerView: UIView!
+
+    let popupView = PopupContainerView()
+    let placeholderView = PlaceholderContainerView()
 
     // MARK: - ProfileViewInput
 
     func show(data: [ProfileViewData]) {
         self.data = data
 
+        if data.isEmpty {
+            placeholderView.show()
+        } else {
+            placeholderView.hide()
+        }
+
         if isViewLoaded {
             tableView.reloadData()
         }
-    }
-
-    func showEmptyPlaceholder() {
-        self.data.removeAll()
-
-        if isViewLoaded {
-            tableView.reloadData()
-        }
-
-        // TODO: Need implement
-    }
-
-    func showErrorPlaceholder(_ error: Error) {
-        // TODO: Need implement
     }
 
     func showActivityIndicator() {
@@ -43,15 +44,24 @@ class ProfileViewController: UITableViewController, ProfileViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.registerCell(ProfileAvatarCell.self)
-        tableView.registerCell(ProfileNameCell.self)
-        tableView.registerCell(ProfileBioCell.self)
-        tableView.registerCell(ProfileLogoutCell.self)
+        tableView.registerNibForCell(ProfileAvatarCell.self)
+        tableView.registerNibForCell(ProfileNameCell.self)
+        tableView.registerNibForCell(ProfileContactCell.self)
+        tableView.registerNibForCell(ProfileBioCell.self)
+        tableView.registerNibForCell(ProfileLogoutCell.self)
 
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self,
                                             action: #selector(handleRefresh(_:)),
                                             for: .valueChanged)
+
+        if let view = PlaceholderView.fromDefaultNib() {
+            view.configure(title: NSLocalizedString("profile.placeholder.title", comment: ""),
+                           subtitle: NSLocalizedString("profile.placeholder.message", comment: ""))
+            placeholderView.placeholderView = view
+        }
+        placeholderView.addOn(superview: view)
+        popupView.addOn(superview: popupContainerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -86,8 +96,8 @@ class ProfileViewController: UITableViewController, ProfileViewInput {
             return cell
 
         case .contact(let type, let content):
-            let cell = tableView.dequeueCell(ProfileBioCell.self, for: indexPath)
-            cell.configure(bio: "\(type): \(content)")
+            let cell = tableView.dequeueCell(ProfileContactCell.self, for: indexPath)
+            cell.configure(contact: content, type: type)
             return cell
 
         case .bio(let bio):
@@ -119,10 +129,6 @@ class ProfileViewController: UITableViewController, ProfileViewInput {
         if let avatarCell = cell as? ProfileAvatarCell {
             avatarCell.cellWillDisplay()
         }
-    }
-
-    }
-
     }
 
 }

@@ -6,5 +6,12 @@
 "map.emptyPlaceholder" = "It was not possible to find venues near you";
 
 "favorites.tabTitle" = "Favorites";
+"favorites.placeholder.title" = "No liked venues";
+"favorites.placeholder.message" = "Pull down to reload";
 
 "profile.tabTitle" = "Profile";
+"profile.placeholder.title" = "Profile not loaded";
+"profile.placeholder.message" = "Pull down to reload";
+
+"error.default.title" = "Oops, something is wrong";
+"error.default.message" = "Pull down to reload";
