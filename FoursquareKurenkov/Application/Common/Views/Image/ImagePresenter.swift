@@ -14,8 +14,8 @@ class ImagePresenter: ImageViewOutput {
 
     // MARK: - ImageViewOutput
 
-    func didTriggeredReadyToDisplayEvent(withWidth width: Int, height: Int) {
-        guard let url = imageIdentifier.makeUrl(with: .widthHeight(width: width, height: height)) else {
+    func didTriggeredReadyToDisplayEvent(with size: ImageSize) {
+        guard let url = imageIdentifier.makeUrl(with: size) else {
             view?.showPlaceholder()
             return
         }

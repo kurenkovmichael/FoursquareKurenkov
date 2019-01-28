@@ -4,7 +4,7 @@ class ProfileAvatarCell: UITableViewCell, ImageViewInput {
 
     @IBOutlet weak var avatarImageView: UIImageView?
     @IBOutlet weak var avatarBackgroundView: UIView?
-    @IBOutlet weak var avatarActivityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var avatarActivityIndicatorView: UIActivityIndicatorView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +19,7 @@ class ProfileAvatarCell: UITableViewCell, ImageViewInput {
 
     func cellWillDisplay() {
         let size = Int(120 * UIScreen.main.scale)
-        output?.didTriggeredReadyToDisplayEvent(withWidth: size, height: size)
+        output?.didTriggeredReadyToDisplayEvent(with: .widthHeight(width: size, height: size))
     }
 
     // MARK: - ImageViewInput
@@ -27,17 +27,17 @@ class ProfileAvatarCell: UITableViewCell, ImageViewInput {
     var output: ImageViewOutput?
 
     func show(image: UIImage?) {
-        avatarActivityIndicatorView.stopAnimating()
-        self.avatarImageView?.image = image
+        avatarActivityIndicatorView?.stopAnimating()
+        avatarImageView?.image = image
     }
 
     func showPlaceholder() {
-        avatarActivityIndicatorView.stopAnimating()
-        self.avatarImageView?.image = UIImage(named: "profile")
+        avatarActivityIndicatorView?.stopAnimating()
+        avatarImageView?.image = UIImage(named: "profile")
     }
 
     func showActivityIndicator() {
-        avatarActivityIndicatorView.startAnimating()
+        avatarActivityIndicatorView?.startAnimating()
     }
 
 }

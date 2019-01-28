@@ -9,17 +9,13 @@ struct ResponseVenueList: Codable {
     let venues: VenueList?
 }
 
-struct Likes: Codable {
-    let count: Int
-}
-
 struct ResponseLike: Codable {
     let likes: Likes?
 }
 
 extension FoursquareApi {
 
-    func getVenuelikes(limit: Int, offset: Int,
+    func getVenuelikes(limit: Int = 20, offset: Int,
                        completion: @escaping (ApiResult<VenueList>) -> Void) {
 
         var parameters: [String: Any] = [:]

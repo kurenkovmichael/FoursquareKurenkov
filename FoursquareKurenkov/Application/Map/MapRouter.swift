@@ -4,11 +4,11 @@ class MapRouter {
 
     private let container: ViewContainer
     private let storage: VenuesStorage
-    private let venueDetailsRouter: ModalRouter
+    private let venueDetailsRouter: VenueDetailsRouter
 
     init(container: ViewContainer,
          storage: VenuesStorage,
-         venueDetailsRouter: ModalRouter) {
+         venueDetailsRouter: VenueDetailsRouter) {
         self.container = container
         self.storage = storage
         self.venueDetailsRouter = venueDetailsRouter
@@ -16,7 +16,7 @@ class MapRouter {
 
     func showVenueDescription(with identifier: String) {
         let pressHandler: (UIView?) -> Void = { [weak self] sender in
-            self?.showVenueDetails(from: sender)
+            self?.showVenueDetails(with: identifier, from: sender)
         }
 
         if let venue = storage.restore(venueWith: identifier),
@@ -46,8 +46,8 @@ class MapRouter {
         container.hideView()
     }
 
-    func showVenueDetails(from view: UIView?) {
-        venueDetailsRouter.show(from: view)
+    func showVenueDetails(with identifier: String, from view: UIView?) {
+        venueDetailsRouter.showVenueDetails(with: identifier, from: view)
     }
 
 }

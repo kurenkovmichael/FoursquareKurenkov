@@ -5,16 +5,16 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
     private weak var view: FavoritesViewInput?
     private let interactor: FavoritesInteractorInput
     private let errorRouter: ErrorPoppupRouter
-    private let favoritesRouter: FavoritesRouter
+    private let venueDetailsRouter: VenueDetailsRouter
 
     init(view: FavoritesViewInput,
          interactor: FavoritesInteractorInput,
          errorRouter: ErrorPoppupRouter,
-         favoritesRouter: FavoritesRouter) {
+         venueDetailsRouter: VenueDetailsRouter) {
         self.view = view
         self.interactor = interactor
         self.errorRouter = errorRouter
-        self.favoritesRouter = favoritesRouter
+        self.venueDetailsRouter = venueDetailsRouter
     }
 
     // MARK: - FavoritesViewOutput
@@ -36,7 +36,7 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
     }
 
     func didTriggeredSelectVenueEvent(_ venue: Venue) {
-        favoritesRouter.showVenueDetails(from: nil)
+        venueDetailsRouter.showVenueDetails(with: venue.identifier, from: nil)
     }
 
     func didTriggeredUnfavoriteVenueEvent(_ venue: Venue) {

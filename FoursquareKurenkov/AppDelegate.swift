@@ -78,10 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func rootViewControllerFactory(_ rootRouter: RootRouter) -> ViewControllerFactory {
         let mapFactory = MapViewControllerFactory(rootRouter: rootRouter,
                                                   api: api,
+                                                  imagesServise: imagesServise,
                                                   locationService: locationService)
 
         let favoritesFactory = FavoritesViewControllerFactory(rootRouter: rootRouter,
                                                               api: api,
+                                                              imagesServise: imagesServise,
                                                               coreDataStack: coreDataStack)
 
         let profileFactory = ProfileViewControllerFactory(authorizationService: authorizationService,

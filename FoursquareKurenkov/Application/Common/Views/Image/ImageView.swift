@@ -8,5 +8,5 @@ protocol ImageViewInput: class {
 }
 
 protocol ImageViewOutput: class {
-    func didTriggeredReadyToDisplayEvent(withWidth width: Int, height: Int)
+    func didTriggeredReadyToDisplayEvent(with size: ImageSize)
 }

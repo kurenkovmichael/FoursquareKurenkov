@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="wVr-Bh-F6j" customClass="ProfileContactCell" customModule="FoursquareKurenkov" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wVr-Bh-F6j" id="MDm-Zn-cOa" customClass="VenueDetailsPhoneCell" customModule="FoursquareKurenkov" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYd-gv-iZB">
+                        <rect key="frame" x="52" y="2" width="252" height="39.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="XI5-9A-gB7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-O0-KjZ">
+                        <rect key="frame" x="16" y="12" width="20" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="0wp-iB-TBT"/>
+                            <constraint firstAttribute="height" constant="20" id="G2t-v9-3YK"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SYd-gv-iZB" firstAttribute="leading" secondItem="Oej-O0-KjZ" secondAttribute="trailing" constant="16" id="8D8-AV-Mfh"/>
+                    <constraint firstAttribute="bottom" secondItem="SYd-gv-iZB" secondAttribute="bottom" constant="2" id="CwY-8d-Wju"/>
+                    <constraint firstItem="SYd-gv-iZB" firstAttribute="top" secondItem="MDm-Zn-cOa" secondAttribute="top" constant="2" id="DeO-m7-jOI"/>
+                    <constraint firstItem="Oej-O0-KjZ" firstAttribute="leading" secondItem="MDm-Zn-cOa" secondAttribute="leading" constant="16" id="IPT-15-PSz"/>
+                    <constraint firstAttribute="trailing" secondItem="SYd-gv-iZB" secondAttribute="trailing" constant="16" id="Vhh-KG-Hpw"/>
+                    <constraint firstItem="Oej-O0-KjZ" firstAttribute="centerY" secondItem="MDm-Zn-cOa" secondAttribute="centerY" id="X7y-zb-Tqt"/>
+                </constraints>
+                <connections>
+                    <outlet property="phoneLabel" destination="SYd-gv-iZB" id="HMI-Zs-TFa"/>
+                </connections>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="lDq-Sa-oUr"/>
+            <point key="canvasLocation" x="53" y="133"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="phone" width="19.200000762939453" height="19.200000762939453"/>
+    </resources>
+</document>

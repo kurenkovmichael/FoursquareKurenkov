@@ -74,7 +74,7 @@ class FavoritesInteractor: FavoritesInteractorInput {
     // MARK: - Private
 
     private func loadFavorites(offset: Int) {
-        api.getVenuelikes(limit: 5, offset: offset) { (result) in
+        api.getVenuelikes(offset: offset) { (result) in
             switch result {
             case .success(let response):
                 self.storage.store(venues: response.items ?? [], offset: offset) { success, error in
