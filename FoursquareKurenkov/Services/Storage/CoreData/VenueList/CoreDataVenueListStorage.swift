@@ -19,7 +19,7 @@ class CoreDataVenueListStorage: VenueListStorage {
             let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest()
             request.entity = VenueListItemManagedObject.entity()
             request.resultType = NSFetchRequestResultType.dictionaryResultType
-            request.predicate = VenueListItemManagedObject.predicateItemsOfList(withName: self.name)
+            request.predicate = VenueListItemManagedObject.predicate(listName: self.name)
             request.propertiesToFetch = [VenueListItemManagedObject.maxIndexExpression(resultKey: maxIndexKey)]
 
             var maxIndex: Int?
@@ -40,8 +40,8 @@ class CoreDataVenueListStorage: VenueListStorage {
 
     func store(venues venuesToStore: [Venue], offset: Int, completion: @escaping (Bool, Error?) -> Void) {
         coreDataStack.saveAsync({ context in
-            let listItemsPredicate = VenueListItemManagedObject.predicateItemsOfList(withName: self.name)
-            let storedVenues = (VenueListItemManagedObject.mr_findAll(with: listItemsPredicate, in: context)
+            let predicate = VenueListItemManagedObject.predicate(listName: self.name)
+            let storedVenues = (VenueListItemManagedObject.mr_findAll(with: predicate, in: context)
                 as? [VenueListItemManagedObject]) ?? []
 
             var venueToIdsMapping: [String: VenueListItemManagedObject] = [:]
@@ -74,13 +74,22 @@ class CoreDataVenueListStorage: VenueListStorage {
                 venueToDelete.delete(in: context)
             }
 
-        }, completion: { success, error in
-            completion(success, error)
-        })
+        }, completion: completion)
+    }
+
+    func delete(venue: Venue, completion: @escaping (Bool, Error?) -> Void) {
+        coreDataStack.saveAsync({ context in
+            let predicate = VenueListItemManagedObject.predicate(identifier: venue.identifier, listName: self.name)
+            let venuesToDelete = (VenueListItemManagedObject.mr_findAll(with: predicate, in: context)
+                as? [VenueListItemManagedObject]) ?? []
+            for venueToDelete in venuesToDelete {
+                venueToDelete.delete(in: context)
+            }
+        }, completion: completion)
     }
 
     func dataProvider() -> DataProvider<Venue>? {
-        let predicate = VenueListItemManagedObject.predicateItemsOfList(withName: self.name)
+        let predicate = VenueListItemManagedObject.predicate(listName: name)
         guard let frc = VenueListItemManagedObject.mr_fetchAllSorted(by: "index",
                                 ascending: true, with: predicate, groupBy: nil, delegate: nil)
             as? NSFetchedResultsController<VenueListItemManagedObject> else {

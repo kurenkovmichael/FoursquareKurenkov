@@ -27,7 +27,12 @@ class CoreDataStack {
 
     func saveAsync(_ transaction: @escaping (NSManagedObjectContext) -> Void,
                    completion: ((Bool, Error?) -> Void)?) {
-        MagicalRecord.save(transaction, completion: completion)
+        MagicalRecord.save(transaction) { (_, error) in
+            // If the error is nil, the save was successful.
+            // If there were no changes in the transaction,
+            // saving will end with "contextDidSave" == false
+            completion?(error == nil, error)
+        }
     }
 
     // MARK: - Private

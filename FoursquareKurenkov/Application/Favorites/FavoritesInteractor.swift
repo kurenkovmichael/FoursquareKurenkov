@@ -3,6 +3,7 @@ import Foundation
 protocol FavoritesInteractorInput {
     func reloadFavorites()
     func loadMoreFavorites()
+    func unfavorite(venue: Venue)
     func obtainDataProvider() -> DataProvider<Venue>?
 }
 
@@ -11,6 +12,7 @@ protocol FavoritesInteractorOutput: class {
     func startLoadingMoreFavorites()
     func favoritesLoadingCompletedSuccessfully()
     func favoritesLoadingFailed(withError error: Error?)
+    func unfavoriteailed(withError error: Error?)
 }
 
 class FavoritesInteractor: FavoritesInteractorInput {
@@ -47,6 +49,21 @@ class FavoritesInteractor: FavoritesInteractorInput {
         output?.startLoadingMoreFavorites()
         storage.maxOrderOfStoredItems { maxOrder, _ in
             self.loadFavorites(offset: maxOrder + 1)
+        }
+    }
+
+    func unfavorite(venue: Venue) {
+        api.likeVenue(withIdentifier: venue.identifier, value: false) { result in
+            switch result {
+            case .success:
+                self.storage.delete(venue: venue) { success, error in
+                    if !success {
+                        self.output?.unfavoriteailed(withError: error)
+                    }
+                }
+            case .fail(let error):
+                self.output?.unfavoriteailed(withError: error)
+            }
         }
     }
 

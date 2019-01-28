@@ -6,6 +6,7 @@
 "map.emptyPlaceholder" = "It was not possible to find venues near you";
 
 "favorites.tabTitle" = "Favorites";
+"favorites.unfavoriteActionName" = "Unfavorite";
 "favorites.placeholder.title" = "No liked venues";
 "favorites.placeholder.message" = "Pull down to reload";
 

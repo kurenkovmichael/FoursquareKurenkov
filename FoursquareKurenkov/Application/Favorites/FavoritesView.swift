@@ -13,4 +13,5 @@ protocol FavoritesViewOutput: class {
     func didTriggeredPulldownEvent()
     func didTriggeredScrolledToEndEvent()
     func didTriggeredSelectVenueEvent(_ venue: Venue)
+    func didTriggeredUnfavoriteVenueEvent(_ venue: Venue)
 }

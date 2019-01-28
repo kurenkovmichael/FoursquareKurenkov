@@ -33,18 +33,25 @@ class FoursquareApi {
         self.errorHandlers = errorHandlers
     }
 
+    enum Method {
+        case get, post
+    }
+
     func request<Response, Result>(path: String,
+                                   method: Method = .get,
                                    parameters: [String: Any] = [:],
                                    completion: @escaping (ApiResult<Result>) -> Void,
                                    resultConverter: @escaping FoursquareApiParser<Response, Result>.ResultConverter)
         where Response: Codable {
         request(path: path,
+                method: method,
                 parameters: parameters,
                 parser: FoursquareApiParser<Response, Result>(resultConverter: resultConverter),
                 completion: completion)
     }
 
     func request<Response, Result>(path: String,
+                                   method: Method,
                                    parameters additionalParameters: [String: Any],
                                    parser: FoursquareApiParser<Response, Result>,
                                    completion: @escaping (ApiResult<Result>) -> Void)
@@ -74,7 +81,7 @@ class FoursquareApi {
             }
 
             Alamofire.request(url,
-                              method: .get,
+                              method: conver(method: method),
                               parameters: parameters,
                               encoding: URLEncoding.default,
                               headers: nil)
@@ -99,4 +106,12 @@ class FoursquareApi {
         return parameters
     }
 
+    private func conver(method: Method) -> HTTPMethod {
+        switch method {
+        case .post:
+            return HTTPMethod.post
+        default:
+            return HTTPMethod.get
+        }
+    }
 }

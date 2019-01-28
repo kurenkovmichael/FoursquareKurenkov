@@ -120,6 +120,19 @@ class FavoritesViewController: UIViewController,
         // TODO: Need Imolement
     }
 
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let handler = { [weak self] (action: UITableViewRowAction, index: IndexPath) in
+            if let venue = self?.dataProvider?.item(at: index.item) {
+                self?.output.didTriggeredUnfavoriteVenueEvent(venue)
+            }
+        }
+
+        let unfavorite = UITableViewRowAction(style: .destructive,
+                                              title: NSLocalizedString("favorites.unfavoriteActionName", comment: ""),
+                                              handler: handler)
+        return [unfavorite]
+    }
+
     private let minOffsetToBottom: CGFloat = 50
     private var lastOffsetToBottom: CGFloat = 0
 

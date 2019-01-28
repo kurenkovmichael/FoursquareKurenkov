@@ -3,8 +3,12 @@ import Foundation
 @objc(VenueManagedObject)
 open class VenueManagedObject: _VenueManagedObject {
 
-    class func predicateItemsOfList(withName listName: String) -> NSPredicate {
+    class func predicate(listName: String) -> NSPredicate {
         return NSPredicate(format: "listName == %@", listName)
+    }
+
+    class func predicate(identifier: String, listName: String) -> NSPredicate {
+        return NSPredicate(format: "identifier == %@ AND listName == %@", identifier, listName)
     }
 
     func fill(from venue: Venue, in context: NSManagedObjectContext) {

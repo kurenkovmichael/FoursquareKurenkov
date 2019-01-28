@@ -18,7 +18,7 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
         if let dataProvider = interactor.obtainDataProvider() {
             view?.showContentOf(dataProvider: dataProvider)
         } else {
-            // Show error
+            router.showPoppup(withError: nil)
         }
     }
 
@@ -32,6 +32,10 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
 
     func didTriggeredSelectVenueEvent(_ venue: Venue) {
         // TODO: Need omplement
+    }
+
+    func didTriggeredUnfavoriteVenueEvent(_ venue: Venue) {
+        interactor.unfavorite(venue: venue)
     }
 
     // MARK: - FavoritesInteractorOutput
@@ -56,6 +60,10 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
     func favoritesLoadingFailed(withError error: Error?) {
         view?.hideRefrashActivityIndicator()
         view?.hideLoadMoreActivityIndicator()
+        router.showPoppup(withError: error)
+    }
+
+    func unfavoriteailed(withError error: Error?) {
         router.showPoppup(withError: error)
     }
 
