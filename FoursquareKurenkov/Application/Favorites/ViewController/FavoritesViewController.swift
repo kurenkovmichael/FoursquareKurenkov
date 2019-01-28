@@ -115,9 +115,11 @@ class FavoritesViewController: UIViewController,
 
     // MARK: - UITableViewDelegate
 
-    func tableView(_ tableView: UITableView,
-                   didSelectRowAt indexPath: IndexPath) {
-        // TODO: Need Imolement
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let venue = dataProvider?.item(at: indexPath.item) {
+            output.didTriggeredSelectVenueEvent(venue)
+        }
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

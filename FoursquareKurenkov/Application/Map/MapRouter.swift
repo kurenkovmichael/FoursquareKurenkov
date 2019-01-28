@@ -4,15 +4,23 @@ class MapRouter {
 
     private let container: ViewContainer
     private let storage: VenuesStorage
+    private let venueDetailsRouter: ModalRouter
 
-    init(container: ViewContainer, storage: VenuesStorage) {
+    init(container: ViewContainer,
+         storage: VenuesStorage,
+         venueDetailsRouter: ModalRouter) {
         self.container = container
         self.storage = storage
+        self.venueDetailsRouter = venueDetailsRouter
     }
 
     func showVenueDescription(with identifier: String) {
+        let pressHandler: (UIView?) -> Void = { [weak self] sender in
+            self?.showVenueDetails(from: sender)
+        }
+
         if let venue = storage.restore(venueWith: identifier),
-           let view = VenueDescriptionView.venueDescriptionView(with: venue) {
+            let view = VenueDescriptionView.venueDescriptionView(with: venue, pressHandler: pressHandler) {
             container.show(view: view)
         }
     }
@@ -36,6 +44,10 @@ class MapRouter {
 
     func hidePoppup() {
         container.hideView()
+    }
+
+    func showVenueDetails(from view: UIView?) {
+        venueDetailsRouter.show(from: view)
     }
 
 }

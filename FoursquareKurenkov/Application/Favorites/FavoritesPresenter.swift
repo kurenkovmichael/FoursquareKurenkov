@@ -4,12 +4,17 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
 
     private weak var view: FavoritesViewInput?
     private let interactor: FavoritesInteractorInput
-    private let router: ErrorPoppupRouter
+    private let errorRouter: ErrorPoppupRouter
+    private let favoritesRouter: FavoritesRouter
 
-    init(view: FavoritesViewInput, interactor: FavoritesInteractorInput, router: ErrorPoppupRouter) {
+    init(view: FavoritesViewInput,
+         interactor: FavoritesInteractorInput,
+         errorRouter: ErrorPoppupRouter,
+         favoritesRouter: FavoritesRouter) {
         self.view = view
         self.interactor = interactor
-        self.router = router
+        self.errorRouter = errorRouter
+        self.favoritesRouter = favoritesRouter
     }
 
     // MARK: - FavoritesViewOutput
@@ -18,7 +23,7 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
         if let dataProvider = interactor.obtainDataProvider() {
             view?.showContentOf(dataProvider: dataProvider)
         } else {
-            router.showPoppup(withError: nil)
+            errorRouter.showPoppup(withError: nil)
         }
     }
 
@@ -31,7 +36,7 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
     }
 
     func didTriggeredSelectVenueEvent(_ venue: Venue) {
-        // TODO: Need omplement
+        favoritesRouter.showVenueDetails(from: nil)
     }
 
     func didTriggeredUnfavoriteVenueEvent(_ venue: Venue) {
@@ -60,11 +65,11 @@ class FavoritesPresenter: FavoritesInteractorOutput, FavoritesViewOutput {
     func favoritesLoadingFailed(withError error: Error?) {
         view?.hideRefrashActivityIndicator()
         view?.hideLoadMoreActivityIndicator()
-        router.showPoppup(withError: error)
+        errorRouter.showPoppup(withError: error)
     }
 
     func unfavoriteailed(withError error: Error?) {
-        router.showPoppup(withError: error)
+        errorRouter.showPoppup(withError: error)
     }
 
 }

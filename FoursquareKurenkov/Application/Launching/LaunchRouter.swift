@@ -2,16 +2,17 @@ import UIKit
 
 class LaunchRouter {
 
+    private let rootRouter: RootRouter
     private let rootFactory: ViewControllerFactory
     private let loginFactory: ViewControllerFactory
 
-    init(rootFactory: ViewControllerFactory,
+    init(rootRouter: RootRouter,
+         rootFactory: ViewControllerFactory,
          loginFactory: ViewControllerFactory) {
+        self.rootRouter = rootRouter
         self.rootFactory = rootFactory
         self.loginFactory = loginFactory
     }
-
-    var window: UIWindow?
 
     enum State {
         case none
@@ -30,7 +31,7 @@ class LaunchRouter {
             return
         }
 
-        show(viewController: viewController)
+        rootRouter.show(rootViewController: viewController)
         state = .shownLoginScreen
     }
 
@@ -43,18 +44,8 @@ class LaunchRouter {
             return
         }
 
-        show(viewController: viewController)
+        rootRouter.show(rootViewController: viewController)
         state = .shownApplication
-    }
-
-    private func show(viewController: UIViewController) {
-        if self.window == nil {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-        }
-
-        self.window?.rootViewController = viewController
-
-        self.window?.makeKeyAndVisible()
     }
 
 }

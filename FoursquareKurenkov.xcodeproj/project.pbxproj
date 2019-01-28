@@ -89,6 +89,17 @@
 		CFAA71B021F79BB80089F40D /* ImageViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAA71AF21F79BB80089F40D /* ImageViewConfigurator.swift */; };
 		CFBE36A621FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36A521FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift */; };
 		CFBE36A821FE7389005F6B66 /* UIDevice+Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36A721FE7389005F6B66 /* UIDevice+Simulator.swift */; };
+		CFBE36AA21FE87D3005F6B66 /* VenueDetailsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36A921FE87D3005F6B66 /* VenueDetailsViewControllerFactory.swift */; };
+		CFBE36AE21FE87F1005F6B66 /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36AC21FE87F1005F6B66 /* VenueDetailsViewController.swift */; };
+		CFBE36AF21FE87F1005F6B66 /* VenueDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBE36AD21FE87F1005F6B66 /* VenueDetailsViewController.xib */; };
+		CFBE36B121FE8812005F6B66 /* VenueDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36B021FE8812005F6B66 /* VenueDetailsView.swift */; };
+		CFBE36B321FE881D005F6B66 /* VenueDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36B221FE881D005F6B66 /* VenueDetailsPresenter.swift */; };
+		CFBE36B521FE8827005F6B66 /* VenueDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36B421FE8827005F6B66 /* VenueDetailsInteractor.swift */; };
+		CFBE36B721FE9019005F6B66 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36B621FE9019005F6B66 /* ModalRouter.swift */; };
+		CFBE36BB21FE9FAD005F6B66 /* ModalContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36B921FE9FAD005F6B66 /* ModalContainerViewController.swift */; };
+		CFBE36BC21FE9FAD005F6B66 /* ModalContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBE36BA21FE9FAD005F6B66 /* ModalContainerViewController.xib */; };
+		CFBE36BE21FEA4C7005F6B66 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36BD21FEA4C7005F6B66 /* RootRouter.swift */; };
+		CFBE36C021FEB032005F6B66 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE36BF21FEB032005F6B66 /* FavoritesRouter.swift */; };
 		CFC85FEC21FE4DB000DEDD65 /* UIView+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC85FEB21FE4DB000DEDD65 /* UIView+Setup.swift */; };
 		CFC85FF321FE5C0000DEDD65 /* PlaceholderContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC85FF221FE5C0000DEDD65 /* PlaceholderContainerView.swift */; };
 		CFD4AD6321F7AE40006238EE /* ImageIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */; };
@@ -212,6 +223,17 @@
 		CFAA71AF21F79BB80089F40D /* ImageViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewConfigurator.swift; sourceTree = "<group>"; };
 		CFBE36A521FE72A5005F6B66 /* UserDefaultsAuthorizationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAuthorizationStorage.swift; sourceTree = "<group>"; };
 		CFBE36A721FE7389005F6B66 /* UIDevice+Simulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Simulator.swift"; sourceTree = "<group>"; };
+		CFBE36A921FE87D3005F6B66 /* VenueDetailsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewControllerFactory.swift; sourceTree = "<group>"; };
+		CFBE36AC21FE87F1005F6B66 /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
+		CFBE36AD21FE87F1005F6B66 /* VenueDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueDetailsViewController.xib; sourceTree = "<group>"; };
+		CFBE36B021FE8812005F6B66 /* VenueDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsView.swift; sourceTree = "<group>"; };
+		CFBE36B221FE881D005F6B66 /* VenueDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsPresenter.swift; sourceTree = "<group>"; };
+		CFBE36B421FE8827005F6B66 /* VenueDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsInteractor.swift; sourceTree = "<group>"; };
+		CFBE36B621FE9019005F6B66 /* ModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
+		CFBE36B921FE9FAD005F6B66 /* ModalContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalContainerViewController.swift; sourceTree = "<group>"; };
+		CFBE36BA21FE9FAD005F6B66 /* ModalContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalContainerViewController.xib; sourceTree = "<group>"; };
+		CFBE36BD21FEA4C7005F6B66 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		CFBE36BF21FEB032005F6B66 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		CFC85FEB21FE4DB000DEDD65 /* UIView+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setup.swift"; sourceTree = "<group>"; };
 		CFC85FF221FE5C0000DEDD65 /* PlaceholderContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderContainerView.swift; sourceTree = "<group>"; };
 		CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIdentifier.swift; sourceTree = "<group>"; };
@@ -391,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				CF40F94721FC946700180F36 /* FavoritesViewControllerFactory.swift */,
+				CFBE36BF21FEB032005F6B66 /* FavoritesRouter.swift */,
 				CF9D1A8A21FE02E2009D31DB /* ViewController */,
 				CF40F94D21FC950B00180F36 /* FavoritesView.swift */,
 				CF40F94F21FC951C00180F36 /* FavoritesPresenter.swift */,
@@ -450,6 +473,11 @@
 		CF7CB4CD21F35C31008E9EE6 /* VenueDetails */ = {
 			isa = PBXGroup;
 			children = (
+				CFBE36A921FE87D3005F6B66 /* VenueDetailsViewControllerFactory.swift */,
+				CFBE36AB21FE87DB005F6B66 /* VenueDetails */,
+				CFBE36B021FE8812005F6B66 /* VenueDetailsView.swift */,
+				CFBE36B221FE881D005F6B66 /* VenueDetailsPresenter.swift */,
+				CFBE36B421FE8827005F6B66 /* VenueDetailsInteractor.swift */,
 			);
 			path = VenueDetails;
 			sourceTree = "<group>";
@@ -457,6 +485,7 @@
 		CF7CB4D621F3685D008E9EE6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CFBE36B821FE9F3B005F6B66 /* Routing */,
 				CFC85FF021FE5AD100DEDD65 /* Views */,
 				CF9D1A8521FDFC8B009D31DB /* DataProvider */,
 				CFD4AD6221F7AE40006238EE /* ImageIdentifier.swift */,
@@ -644,6 +673,26 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
+		CFBE36AB21FE87DB005F6B66 /* VenueDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CFBE36AC21FE87F1005F6B66 /* VenueDetailsViewController.swift */,
+				CFBE36AD21FE87F1005F6B66 /* VenueDetailsViewController.xib */,
+			);
+			path = VenueDetails;
+			sourceTree = "<group>";
+		};
+		CFBE36B821FE9F3B005F6B66 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				CFBE36BD21FEA4C7005F6B66 /* RootRouter.swift */,
+				CFBE36B621FE9019005F6B66 /* ModalRouter.swift */,
+				CFBE36B921FE9FAD005F6B66 /* ModalContainerViewController.swift */,
+				CFBE36BA21FE9FAD005F6B66 /* ModalContainerViewController.xib */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		CFC85FF021FE5AD100DEDD65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +860,8 @@
 				CF7CB4DE21F491C2008E9EE6 /* AuthorizationViewController.xib in Resources */,
 				CFF5819D21FC6A2F0003BAC6 /* VenueDescriptionView.xib in Resources */,
 				CFD4AD7221F8DF4D006238EE /* MapViewController.xib in Resources */,
+				CFBE36AF21FE87F1005F6B66 /* VenueDetailsViewController.xib in Resources */,
+				CFBE36BC21FE9FAD005F6B66 /* ModalContainerViewController.xib in Resources */,
 				CF7CB4AB21F35B7A008E9EE6 /* LaunchScreen.storyboard in Resources */,
 				CF40F94C21FC949200180F36 /* FavoritesViewController.xib in Resources */,
 				CFF5819721FC60250003BAC6 /* PlaceholderView.xib in Resources */,
@@ -899,6 +950,8 @@
 				CFF5819B21FC6A250003BAC6 /* VenueDescriptionView.swift in Sources */,
 				CF7CB4CE21F35C32008E9EE6 /* LaunchInteractor.swift in Sources */,
 				CFAA71AB21F79A3F0089F40D /* ImageView.swift in Sources */,
+				CFBE36BB21FE9FAD005F6B66 /* ModalContainerViewController.swift in Sources */,
+				CFBE36AA21FE87D3005F6B66 /* VenueDetailsViewControllerFactory.swift in Sources */,
 				CF7CB4FD21F4E4AD008E9EE6 /* FoursquareApiParser.swift in Sources */,
 				CF7CB4E621F4AB54008E9EE6 /* AuthorizationPresenter.swift in Sources */,
 				CF9D1A7C21FDAC19009D31DB /* _VenueManagedObject.swift in Sources */,
@@ -921,6 +974,7 @@
 				CF9D1A8421FDFC52009D31DB /* ResultsControllerDataProvider.swift in Sources */,
 				CF9D1A5F21FD9FE1009D31DB /* Profile.swift in Sources */,
 				CFAA71AD21F79A610089F40D /* ImagePresenter.swift in Sources */,
+				CFBE36AE21FE87F1005F6B66 /* VenueDetailsViewController.swift in Sources */,
 				CF7CB4CF21F35C32008E9EE6 /* LaunchRouter.swift in Sources */,
 				CF3C4F0F21F6407B00257AA7 /* ProfileLogoutCell.swift in Sources */,
 				CF7CB50521F50EF4008E9EE6 /* AuthorizationErrorHandler.swift in Sources */,
@@ -932,6 +986,7 @@
 				CF9D1A5021FD99E8009D31DB /* FoursquareKurenkov.xcdatamodeld in Sources */,
 				CF40F94421FC8B7000180F36 /* ProfileViewControllerFactory.swift in Sources */,
 				CFF5818B21FC4A110003BAC6 /* UIView+Child.swift in Sources */,
+				CFBE36C021FEB032005F6B66 /* FavoritesRouter.swift in Sources */,
 				CF40F94221FC894C00180F36 /* ViewControllerFactory.swift in Sources */,
 				CF9D1A5921FD9F4E009D31DB /* Venue.swift in Sources */,
 				CF7CB4A121F35B73008E9EE6 /* AppDelegate.swift in Sources */,
@@ -961,8 +1016,10 @@
 				CFD4AD7121F8DF4D006238EE /* MapViewController.swift in Sources */,
 				CFD4AD6E21F8DE6E006238EE /* MapInteractor.swift in Sources */,
 				CF9D1A9821FE467F009D31DB /* PopupContainerView.swift in Sources */,
+				CFBE36B721FE9019005F6B66 /* ModalRouter.swift in Sources */,
 				CF7CB4F021F4B2D1008E9EE6 /* ProfilePresenter.swift in Sources */,
 				CF3C4EFF21F63E0900257AA7 /* ProfileView.swift in Sources */,
+				CFBE36B321FE881D005F6B66 /* VenueDetailsPresenter.swift in Sources */,
 				CFAA71A021F65A320089F40D /* ImagesServise.swift in Sources */,
 				CF40F96821FD820400180F36 /* CoreDataStack.swift in Sources */,
 				CFAA71A621F6EB810089F40D /* DiskImagesCache.swift in Sources */,
@@ -970,6 +1027,7 @@
 				CFAA71B021F79BB80089F40D /* ImageViewConfigurator.swift in Sources */,
 				CF9D1A7321FDAA7F009D31DB /* CategoryManagedObject.swift in Sources */,
 				CFC85FEC21FE4DB000DEDD65 /* UIView+Setup.swift in Sources */,
+				CFBE36B121FE8812005F6B66 /* VenueDetailsView.swift in Sources */,
 				CF9D1A7921FDAC19009D31DB /* _CategoryManagedObject.swift in Sources */,
 				CFD4AD7921FA3F48006238EE /* FoursquareApi+SearchVenues.swift in Sources */,
 				CFF5819921FC67080003BAC6 /* UIView+Nib.swift in Sources */,
@@ -978,7 +1036,9 @@
 				CF7CB4F721F4BD69008E9EE6 /* FoursquareApi.swift in Sources */,
 				CFBE36A821FE7389005F6B66 /* UIDevice+Simulator.swift in Sources */,
 				CF9D1A7E21FDAC1F009D31DB /* VenueListItemManagedObject.swift in Sources */,
+				CFBE36B521FE8827005F6B66 /* VenueDetailsInteractor.swift in Sources */,
 				CF40F94021FC88A300180F36 /* MapViewControllerFactory.swift in Sources */,
+				CFBE36BE21FEA4C7005F6B66 /* RootRouter.swift in Sources */,
 				CFD4AD6521F8D300006238EE /* FoursquareImageIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

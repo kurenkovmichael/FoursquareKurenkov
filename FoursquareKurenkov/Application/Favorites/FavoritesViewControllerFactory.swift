@@ -2,10 +2,14 @@ import Foundation
 
 class FavoritesViewControllerFactory: ViewControllerFactory {
 
+    private let rootRouter: RootRouter
     private let api: FoursquareApi
     private let coreDataStack: CoreDataStack
 
-    init(api: FoursquareApi, coreDataStack: CoreDataStack) {
+    init(rootRouter: RootRouter,
+         api: FoursquareApi,
+         coreDataStack: CoreDataStack) {
+        self.rootRouter = rootRouter
         self.api = api
         self.coreDataStack = coreDataStack
     }
@@ -16,8 +20,15 @@ class FavoritesViewControllerFactory: ViewControllerFactory {
         let storage = CoreDataVenueListStorage(name: "Favorites", coreDataStack: coreDataStack)
         let interactor = FavoritesInteractor(api: api, storage: storage)
 
-        let router = ErrorPoppupRouter(container: ViewContainer(delegate: view.popupView))
-        let presenter = FavoritesPresenter(view: view, interactor: interactor, router: router)
+        let venueDetailsRouter = ModalRouter(rootRouter: rootRouter,
+                                             controllerFactory: VenueDetailsViewControllerFactory(api: api))
+        let favoritesRouter = FavoritesRouter(venueDetailsRouter: venueDetailsRouter)
+        
+        let errorRouter = ErrorPoppupRouter(container: ViewContainer(delegate: view.popupView))
+        let presenter = FavoritesPresenter(view: view,
+                                           interactor: interactor,
+                                           errorRouter: errorRouter,
+                                           favoritesRouter: favoritesRouter)
         view.output = presenter
         interactor.output = presenter
 

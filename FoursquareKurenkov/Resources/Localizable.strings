@@ -14,5 +14,8 @@
 "profile.placeholder.title" = "Profile not loaded";
 "profile.placeholder.message" = "Pull down to reload";
 
+"venueDetails.placeholder.title" = "Venue Profile not loaded";
+"venueDetails.placeholder.message" = "Pull down to reload";
+
 "error.default.title" = "Oops, something is wrong";
 "error.default.message" = "Pull down to reload";

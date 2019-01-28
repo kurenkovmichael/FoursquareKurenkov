@@ -9,6 +9,8 @@ struct FoursquareConfig {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private let rootRouter = RootRouter()
+
     private var authorizationService: AuthorizationService!
     private var api: FoursquareApi!
     private var locationService: LocationService!
@@ -20,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         createServices()
 
-        let launchRouter = LaunchRouter(rootFactory: rootViewControllerFactory(),
+        let launchRouter = LaunchRouter(rootRouter: rootRouter,
+                                        rootFactory: rootViewControllerFactory(rootRouter),
                                         loginFactory: loginViewControllerFactory())
         launchInteractor = LaunchInteractor(launchRouter: launchRouter,
                                             authorizationService: authorizationService)
@@ -72,10 +75,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return AuthorizationViewControllerFactory(authorizationService: authorizationService)
     }
 
-    private func rootViewControllerFactory() -> ViewControllerFactory {
-        let mapFactory = MapViewControllerFactory(api: api, locationService: locationService)
+    private func rootViewControllerFactory(_ rootRouter: RootRouter) -> ViewControllerFactory {
+        let mapFactory = MapViewControllerFactory(rootRouter: rootRouter,
+                                                  api: api,
+                                                  locationService: locationService)
 
-        let favoritesFactory = FavoritesViewControllerFactory(api: api, coreDataStack: coreDataStack)
+        let favoritesFactory = FavoritesViewControllerFactory(rootRouter: rootRouter,
+                                                              api: api,
+                                                              coreDataStack: coreDataStack)
 
         let profileFactory = ProfileViewControllerFactory(authorizationService: authorizationService,
                                                           api: api,
