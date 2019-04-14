@@ -26,7 +26,7 @@ class ErrorPoppupRouter {
 
     private var hidePoppupTimer: Timer?
 
-    func scheduleHidePoppupTimer() {
+    private func scheduleHidePoppupTimer() {
         hidePoppupTimer?.invalidate()
         hidePoppupTimer = .scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in
             self.hidePoppup()
@@ -34,7 +34,7 @@ class ErrorPoppupRouter {
         }
     }
 
-    func resetHidePoppupTimer() {
+    private func resetHidePoppupTimer() {
         hidePoppupTimer?.invalidate()
         hidePoppupTimer = nil
     }

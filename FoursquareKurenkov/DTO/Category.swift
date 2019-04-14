@@ -6,7 +6,6 @@ struct Category {
     let pluralName: String?
     let shortName: String?
     let icon: FoursquareImageIdentifier?
-
 }
 
 extension Category: Codable {

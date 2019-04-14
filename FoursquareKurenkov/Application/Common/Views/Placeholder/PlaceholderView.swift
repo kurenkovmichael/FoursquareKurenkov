@@ -14,8 +14,8 @@ class PlaceholderView: UIView {
         updateSubtitle()
     }
 
-    public var titleText: String?
-    public var subtitleText: String?
+    private var titleText: String?
+    private var subtitleText: String?
 
     func configure(title: String, subtitle: String) {
         titleText = title

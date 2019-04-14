@@ -11,7 +11,7 @@ class FavoritesViewController: UIViewController,
     @IBOutlet weak var popupContainerView: UIView!
 
     let popupView = PopupContainerView()
-    let placeholderView = PlaceholderContainerView()
+    private let placeholderView = PlaceholderContainerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,9 +93,11 @@ class FavoritesViewController: UIViewController,
     }
 
     func showLoadMoreActivityIndicator() {
+        // TODO: Need implement activity indicators
     }
 
     func hideLoadMoreActivityIndicator() {
+        // TODO: Need implement activity indicators
     }
 
     // MARK: - UITableViewDataSource

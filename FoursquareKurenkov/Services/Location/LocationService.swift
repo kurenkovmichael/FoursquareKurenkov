@@ -64,6 +64,8 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         state.authorizationStatus = status
         if state.waitsLocations {
             requestLocation()
+        } else {
+            notifyFailedUpdateLocations(with: .authorizationDenied)
         }
     }
 

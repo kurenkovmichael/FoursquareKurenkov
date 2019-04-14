@@ -34,9 +34,9 @@ class VenueDetailsViewController: UIViewController,
                                             action: #selector(handleRefresh(_:)),
                                             for: .valueChanged)
 
-        favoriteButton = UIBarButtonItem(image: UIImage(named: "favorite-full"), style: .plain,
+        favoriteButton = UIBarButtonItem(image: UIImage(named: "favorite"), style: .plain,
                                          target: self, action: #selector(favoriteButtonTapped(_:)))
-        unfavoriteButton = UIBarButtonItem(image: UIImage(named: "favorite"), style: .plain,
+        unfavoriteButton = UIBarButtonItem(image: UIImage(named: "favorite-full"), style: .plain,
                                            target: self, action: #selector(unfavoriteButtonTapped(_:)))
         updateFavoriteControll()
 

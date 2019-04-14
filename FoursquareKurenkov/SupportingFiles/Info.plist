@@ -46,9 +46,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>TODO: Description</string>
+	<string>To display venues near you, provide access to your geolocation.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>TODO: Description</string>
+	<string>To display venues near you, provide access to your geolocation.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -14,7 +14,7 @@ class LaunchRouter {
         self.loginFactory = loginFactory
     }
 
-    enum State {
+    private enum State {
         case none
         case shownLoginScreen
         case shownApplication

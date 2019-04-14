@@ -269,8 +269,8 @@
 		CFBE36E121FEFE91005F6B66 /* VenueDetailsRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueDetailsRatingCell.xib; sourceTree = "<group>"; };
 		CFBE36E421FEFE9F005F6B66 /* VenueDetailsLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsLocationCell.swift; sourceTree = "<group>"; };
 		CFBE36E521FEFE9F005F6B66 /* VenueDetailsLocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueDetailsLocationCell.xib; sourceTree = "<group>"; };
-		CFBE36E821FEFEBB005F6B66 /* VenueDetailsCategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VenueDetailsCategoriesCell.xib; path = /Users/mihailkurenkov/Documents/Projects/FoursquareKurenkov/FoursquareKurenkov/Application/VenueDetails/VenueDetails/Cells/VenueDetailsCategoriesCell.xib; sourceTree = "<absolute>"; };
-		CFBE36E921FEFEBB005F6B66 /* VenueDetailsCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VenueDetailsCategoriesCell.swift; path = /Users/mihailkurenkov/Documents/Projects/FoursquareKurenkov/FoursquareKurenkov/Application/VenueDetails/VenueDetails/Cells/VenueDetailsCategoriesCell.swift; sourceTree = "<absolute>"; };
+		CFBE36E821FEFEBB005F6B66 /* VenueDetailsCategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueDetailsCategoriesCell.xib; sourceTree = "<group>"; };
+		CFBE36E921FEFEBB005F6B66 /* VenueDetailsCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsCategoriesCell.swift; sourceTree = "<group>"; };
 		CFBE36EB21FEFEE6005F6B66 /* VenueDetailsPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsPhoneCell.swift; sourceTree = "<group>"; };
 		CFBE36EC21FEFEE6005F6B66 /* VenueDetailsPhoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueDetailsPhoneCell.xib; sourceTree = "<group>"; };
 		CFBE36EF21FEFEF6005F6B66 /* VenueDetailsSocialsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsSocialsCell.swift; sourceTree = "<group>"; };
@@ -1279,7 +1279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3GKMDNHRZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FoursquareKurenkov/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1299,7 +1299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3GKMDNHRZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FoursquareKurenkov/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,7 +7,7 @@ protocol ViewContainerDelegate: class {
 
 class ViewContainer {
 
-    weak var delegate: ViewContainerDelegate?
+    private weak var delegate: ViewContainerDelegate?
 
     init(delegate: ViewContainerDelegate) {
        self.delegate = delegate

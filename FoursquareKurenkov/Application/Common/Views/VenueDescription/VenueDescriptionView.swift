@@ -35,7 +35,7 @@ class VenueDescriptionView: UIView {
         updateContent()
     }
 
-    func updateContent() {
+    private func updateContent() {
         nameLabel?.text = name
         let existName = !(name?.isEmpty ?? true)
         nameLabel?.isHidden = !existName

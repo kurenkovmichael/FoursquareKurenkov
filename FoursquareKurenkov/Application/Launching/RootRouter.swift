@@ -2,7 +2,7 @@ import Foundation
 
 class RootRouter {
 
-    var window: UIWindow?
+    private var window: UIWindow?
 
     func show(rootViewController viewController: UIViewController) {
         if window == nil {
